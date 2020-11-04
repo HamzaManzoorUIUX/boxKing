@@ -155,28 +155,25 @@ return <>
                                                                      {/* <label for="Repeat-Password" className="user-label">Repeat-Password</label> */}
                                                                  </div>
                                                                  {touched.confirmPassword && errors.confirmPassword && <div style={{ color: 'red', marginTop: 10 }}>{errors.confirmPassword}</div>}
-                  
-                                                 </section>
-                                                 <button disabled={(errorDsp==true?true:false)} type="submit" className="submit-button">REGISTER</button>
-                  
-                                                 <div className="frgt-rmb">
+                                                              
+                                                                 <div className="d-flex flex-column flex-md-row justify-content-between align-items-center marginY-5 font-16px">
                                                      <div className="form-check">
                                                          <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                                         <label className="form-check-label">Remember Me</label>
+                                                         <label className="form-check-label font-weight-normal ml-2">Remember Me</label>
                                                      </div>
-                                                     <a> Forgot Password</a>
+                                                     <a className="text-decoration-underline font-weight-normal"> Forgot Password</a>
                                                  </div>
+                                                                 <button disabled={(errorDsp==true?true:false)} type="submit" className="submit-button mt-0 font-21px">REGISTER</button>
+                                                                 <div className=" my-3 my-md-5">
+                                                 <a href="" className="page-link1 font-16px font-weight-normal text-dark">Don,t have an account ?</a>
+                                             </div>
+                                                 </section>
+                  
+                                               
                                              </div>
                                           
-                                             <div className="showBar">
-                                                 <div className="line1"><hr /></div>
-                                                 <div className="line-text"><p>or</p></div>
-                                                 <div className="line2"><hr /></div>
-                                     
-                                             </div>
-                                             <div>
-                                                 <a href="" className="page-link1">Don,t have an account ?</a>
-                                             </div>
+                                          
+                                          
                                          </div>
                                      
                                      </Form>

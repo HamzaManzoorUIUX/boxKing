@@ -119,7 +119,7 @@ export default () => {
                                             {touched.password && errors.password && <div style={{ color: 'red', marginTop: 10 }}>{errors.password}</div>}
                                             <div className="d-flex flex-column flex-md-row justify-content-between align-items-center marginY-5 font-16px">
                                                 <div className="form-check">
-                                                    <input type="checkbox" className="form-check-input mr-2" id="exampleCheck1" />
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                                                     <label className="form-check-label font-weight-normal ml-2">Remember Me</label>
                                                 </div>
                                                 <a className="text-decoration-underline font-weight-normal"> Forgot Password?</a>

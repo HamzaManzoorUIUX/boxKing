@@ -69,17 +69,23 @@ height: 60px !important;
     justify-content: center;
     align-items: center;
 }
-@media only screen and(max-width:992px){
+@media(max-width:992px){
     #myCarousel .carousel-item h4{
         font-size: 42px !important;
     }
 }
-@media only screen and(max-width:767px){
+@media(max-width:767px){
+    #myCarousel .carousel-item h4{
+        font-size: 25px !important;
+    }
     #myCarousel .carousel-item .mask{
         position: static !important;
     }
 }
-
+@media only screen and(max-width:700px){
+    #myCarousel .carousel-item h4{
+        font-size: 25px !important;
+    }}
 #myCarousel .carousel-item .mask{
 
 }

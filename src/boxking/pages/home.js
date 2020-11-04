@@ -324,9 +324,9 @@ const handleActiveIndex=(val)=>{
                   <hr className="hr-c" />
                 </div>
               </div>
-              <div className="row mt-4">
+              <div className="row justify-content-center mt-4">
               {
-                categories.map(x=><div className="col-12 col-sm-6 col-md-4 col-lg-3 block">
+                categories.map(x=><div className="col-12 col-sm-6 col-md-4 col-lg-3 block my-5">
                 <div className="content category-card">
                   <center>
                     <img src={`${urlImg}system/public/dist/img/categories/${x.image}`} className="cate-img" />
@@ -362,7 +362,7 @@ const handleActiveIndex=(val)=>{
 
               <div className="row mb-5">
                 {
-                  products.map(x=><div className="col-md-3 col-sm-6 col-12 mb-3">
+                  products.map(x=><div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3">
                   <a  >
                     <div className="card product-card">
                     <div  className="d-flex justify-content-end">

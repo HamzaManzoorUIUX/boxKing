@@ -29,7 +29,7 @@ const DisplayingErrorMessagesSchema = Yup.object().shape({
 
 export default () => {
 
-    const [loaderMain,setloaderMain]=useState(false);
+    const [loaderMain, setloaderMain] = useState(false);
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState("Opps Something wen't wrong");
     const [errorDsp, seterrorDsp] = useState(false);
@@ -72,82 +72,81 @@ export default () => {
         return false;
     }
     return <>
-    {
-        loaderMain? <div className="sweet-loading" style={{position:'absolute',top:'50%',left:'50%'}}>
-        <ClipLoader
-          css={override}
-          size={20}
-          color={"#f9b541"}
-          loading={true}
-        />
-      </div>:  <Formik
-            initialValues={{
+        {
+            loaderMain ? <div className="sweet-loading" style={{ position: 'absolute', top: '50%', left: '50%' }}>
+                <ClipLoader
+                    css={override}
+                    size={20}
+                    color={"#f9b541"}
+                    loading={true}
+                />
+            </div> : <Formik
+                initialValues={{
 
-                email: '',
-                password: '',
-            }}
-            validationSchema={DisplayingErrorMessagesSchema}
-            onSubmit={async (values, { setSubmitting }) => {
-                await postCat(values)
-            }}
-        >
-            {({ errors, touched, getFieldProps }) => {
-                cstErrors = errors;
+                    email: '',
+                    password: '',
+                }}
+                validationSchema={DisplayingErrorMessagesSchema}
+                onSubmit={async (values, { setSubmitting }) => {
+                    await postCat(values)
+                }}
+            >
+                    {({ errors, touched, getFieldProps }) => {
+                        cstErrors = errors;
 
-                return (
-                    <Form>
+                        return (
+                            <Form>
 
-                        <div className="container main">
-                            <div className="main-form">
-                                <img src={require('../images/logo.png')} alt="Logo" className="logo" />
+                                <div className="container main">
+                                    <div className="main-form">
+                                        <img src={require('../images/logo.png')} alt="Logo" className="logo" />
 
 
-                                <section className="bg-white rounded">
-<h1 className="text-themeOrange text-center my-3 my-md-5">Login</h1>
+                                        <section className="LoginSection">
+                                            <h1 className="text-themeOrange text-center mb-3 pb-3 mb-md-5 pb-md-5">Login</h1>
 
-                                    <div className="form-group form-group-email">
-                                        <input  {...getFieldProps("email")} className="form-control" type="text" id="Email" placeholder="Enter your email address" />
-                                        {/* <label for="email" className="user-label">Email</label> */}
+                                            <div className="form-group form-group-email">
+                                                <input  {...getFieldProps("email")} className="form-control py-3" type="text" id="Email" placeholder="Enter your email address" />
+                                                {/* <label for="email" className="user-label">Email</label> */}
+                                            </div>
+                                            {touched.email && errors.email && <div style={{ color: 'red', marginTop: 10 }}>{errors.email}</div>}
+
+
+                                            <div className="from-group form-group-password">
+                                                <input {...getFieldProps("password")} className="form-control" type="text" id="Password" placeholder="Enter your password" />
+                                                {/* <label for="Password" className="form-control bg-white">Password</label> */}
+                                            </div>
+                                            {touched.password && errors.password && <div style={{ color: 'red', marginTop: 10 }}>{errors.password}</div>}
+                                            <div className="frgt-rmb marginY-5 font-16px">
+                                                <div className="form-check">
+                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                                    <label className="form-check-label font-weight-bolder">Remember Me</label>
+                                                </div>
+                                                <a className="text-decoration-underline  font-weight-bold"> Forgot Password?</a>
+                                            </div>
+                                            <button disabled={(errorDsp == true ? true : false)} type="submit" className="submit-button mt-0 font-21px">Login</button>
+                                            <div className="d-flex flex-row justify-content-between my-3 my-md-5">
+                                                <Link to="/register" className="page-link1 font-16px font-weight-bold">Don,t have an account ?</Link>
+                                                <Link to="/admin/auth/login" className="page-link1 font-16px font-weight-bold text-decoration-underline">Login as Admin</Link>
+                                            </div>
+                                        </section>
+
+
                                     </div>
-                                    {touched.email && errors.email && <div style={{ color: 'red', marginTop: 10 }}>{errors.email}</div>}
 
 
-                                    <div className="from-group form-group-password">
-                                        <input {...getFieldProps("password")} className="form-control" type="text" id="Password" placeholder="Enter your password" />
-                                        {/* <label for="Password" className="form-control bg-white">Password</label> */}
-                                    </div>
-                                    {touched.password && errors.password && <div style={{ color: 'red', marginTop: 10 }}>{errors.password}</div>}
-                                    <div className="frgt-rmb">
-                                    <div className="form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label">Remember Me</label>
-                                    </div>
-                                    <a> Forgot Password</a>
+
+
                                 </div>
-                                <button disabled={(errorDsp == true ? true : false)} type="submit" className="submit-button">Login</button>
-                                <div>
-                                <Link to="/register" className="page-link1">Don,t have an account ?</Link>
-                                <br />
-                                <Link to="/admin/auth/login" className="page-link1">Login as Admin</Link>
-                            </div>
-                                </section>
 
-                                
-                            </div>
+                            </Form>
+                        )
 
-               
-                            
+                    }}
+                </Formik>
 
-                        </div>
+        }
 
-                    </Form>
-                )
-
-            }}
-        </Formik>
-      
-    }
-     
         <Snackbar
             anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
             open={open}

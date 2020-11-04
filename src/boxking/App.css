@@ -29,12 +29,7 @@
 @import url("https://fonts.googleapis.com/css?family=Acme");
 @import url("https://fonts.googleapis.com/css?family=Allan"); */
 
-.bg-themeOrange{
-  background-color: #f5aa75;
-}
-.text-themeOrange{
-  color: #f5aa75;
-}
+
 #my-canvas{
 width: 100%;
 height: 100%;

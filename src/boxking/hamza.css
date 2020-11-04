@@ -2,7 +2,7 @@
     --themeOrange:#f5aa75;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,500;1,800&display=swap');
-*:not(i){
+*:not(.fa){
   font-family: 'Poppins', sans-serif !important ;
 }
 .bg-themeOrange{
@@ -11,7 +11,9 @@
   .text-themeOrange{
     color: var(--themeOrange);
   }
-.form-group-custom{
+
+/* forms */
+  .form-group-custom{
 position: relative;
 
 }
@@ -57,4 +59,9 @@ height: 60px !important;
     border-top: 10px solid var(--themeOrange);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+/* homepage */
+#myCarousel .carousel-item .mask{
+
 }

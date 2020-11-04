@@ -113,7 +113,7 @@ export default () => {
 
 
                                             <div className="from-group form-group-custom password">
-                                                <input {...getFieldProps("password")} className="form-control" type="text" id="Password" placeholder="Enter your password" />
+                                                <input {...getFieldProps("password")} className="form-control" type="password" id="Password" placeholder="Enter your password" />
                                                 {/* <label for="Password" className="form-control bg-white">Password</label> */}
                                             </div>
                                             {touched.password && errors.password && <div style={{ color: 'red', marginTop: 10 }}>{errors.password}</div>}

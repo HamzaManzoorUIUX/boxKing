@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/navbar';
 import Strip from '../components/strip';
-import {Accordion,Button,Card} from 'react-bootstrap'
+// import {Accordion,Button,Card} from 'react-bootstrap'
 
 import Footer from '../components/home/footer';
 
@@ -14,13 +14,9 @@ export default ()=>{
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 col-12">
-                        <div className="row mt-5">
-                            <div className="col-md-12">
-                                <h2 className="cat-title line-h-h">
+                    <h2 className="cat-title line-h-h">
                                 We're not only a service providers.
                                   </h2>
-                            </div>
-                        </div>
                          <p className="mt-2 f-14-how">We provide best solutions for a Coaching Services. If you need any help in cleaning or maintenance contact us today to get your body clean. We provide best solutions for a Coaching Services. We provide best solutions for a Coaching Services. If you need any help in cleaning or maintenance contact us today to get your body clean.</p>
                          <button className="btn btn-theme-how mt-3">Start Today</button>
                     </div>
@@ -108,11 +104,7 @@ export default ()=>{
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 col-12">
-                        <div className="row mt-5">
-                            <div className="col-md-12">
-                                <h2 className="cat-title"> The power of Boxking</h2>
-                            </div>
-                        </div>
+                    <h2 className="cat-title"> The power of Boxking</h2>
                          <p className="mt-2 f-14-how">We provide best solutions for a Coaching Services. If you need any help in cleaning or maintenance contact us today to get your body clean. We provide best solutions for a Coaching Services. We provide best solutions for a Coaching Services. If you need any help in cleaning or maintenance contact us today to get your body clean.</p>
                          <button className="btn btn-theme-how">Start Today</button>
                     </div>
@@ -132,11 +124,7 @@ export default ()=>{
                     </div>
 
                     <div className="col-md-6 col-12">
-                        <div className="row mt-5">
-                            <div className="col-md-12">
-                                <h2 className="cat-title"> The power of Boxking</h2>
-                            </div>
-                        </div>
+                    <h2 className="cat-title"> The power of Boxking</h2>
                          <p className="mt-2 f-14-how">We provide best solutions for a Coaching Services. If you need any help in cleaning or maintenance contact us today to get your body clean. We provide best solutions for a Coaching Services. We provide best solutions for a Coaching Services. If you need any help in cleaning or maintenance contact us today to get your body clean.</p>
                          <button className="btn btn-theme-how">Start Today</button>
                     </div>

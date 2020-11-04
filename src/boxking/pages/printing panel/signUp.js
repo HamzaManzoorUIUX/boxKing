@@ -1,11 +1,11 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import {repository} from '../../utils/repository';
-import {useSelector,useDispatch} from 'react-redux';
+import { repository } from '../../utils/repository';
+import { useSelector, useDispatch } from 'react-redux';
 import Snackbar from '@material-ui/core/Snackbar';
 import actionMethodes from '../../../redux/actionMethodes/cartActionsTypes';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import ClipLoader from "react-spinners/PulseLoader";
 import { css } from "@emotion/core";
 const override = css`
@@ -17,12 +17,12 @@ let cstErrors;
 const DisplayingErrorMessagesSchema = Yup.object().shape({
   CompanyName: Yup.string()
     .required('Required'),
-      password: Yup.string()
-  ,PhoneNumber: Yup.string()
+  password: Yup.string()
+  , PhoneNumber: Yup.string()
     .required('Required'),
   premiumshipping: Yup.string()
     .required('Required'),
-      password: Yup.string()
+  password: Yup.string()
     .required('Required').matches(
       /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
       "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
@@ -41,17 +41,16 @@ const DisplayingErrorMessagesSchema = Yup.object().shape({
    */
 });
 
-export default () =>
-{
-    const [open, setOpen] = useState(false);
-    const [loader, setloader] = useState(false);
-    const [message, setMessage] = useState("Opps Something wen't wrong");
-    const [loaderMain,setloaderMain]=useState(false);
+export default () => {
+  const [open, setOpen] = useState(false);
+  const [loader, setloader] = useState(false);
+  const [message, setMessage] = useState("Opps Something wen't wrong");
+  const [loaderMain, setloaderMain] = useState(false);
 
-    const dispatch=useDispatch();
-    const history=useHistory();
-      const postCat = async (datapost) => {
-        setloaderMain(true);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const postCat = async (datapost) => {
+    setloaderMain(true);
 
     setloader(true);
     const { data, status } = await repository.checkUniqe(datapost).then(x => x).then(x => x)
@@ -81,10 +80,10 @@ export default () =>
             setMessage("Opps Something wen't wrong")
           }
           else {
-            dispatch({type:actionMethodes.login,payload:{...data,role:'printing'}});
+            dispatch({ type: actionMethodes.login, payload: { ...data, role: 'printing' } });
             history.replace('/')
             setOpen(true)
-           // setMessage("Success! Company added sucessfully")
+            // setMessage("Success! Company added sucessfully")
             setTimeout(() => {
               setOpen(false)
             }, 3000);
@@ -120,163 +119,160 @@ export default () =>
     setloaderMain(false);
     return false;
   }
-return <>
-         {
-        loaderMain? <div className="sweet-loading" style={{position:'absolute',top:'50%',left:'50%'}}>
+  return <>
+    {
+      loaderMain ? <div className="sweet-loading" style={{ position: 'absolute', top: '50%', left: '50%' }}>
         <ClipLoader
           css={override}
           size={20}
           color={"#f9b541"}
           loading={true}
         />
-      </div>: <Formik
-                initialValues={{
-                    email: '',
-                    password: '',
-                    confirmPassword: '',
-                    CompanyName: '',
-                    PhoneNumber: '',
-                    Country: '',
-                    Fax: '',
-                    State: '',
-                    lat: '',
-                    long: '',
-                    address: '',
-                    premiumshipping: '',
-                }}
-                validationSchema={DisplayingErrorMessagesSchema}
-                onSubmit={async (values, { setSubmitting }) => {
-                  await postCat(values)
-                }}
-            >
-                {({ errors, touched, getFieldProps }) =>{
-                                  cstErrors = errors;
+      </div> : <Formik
+        initialValues={{
+          email: '',
+          password: '',
+          confirmPassword: '',
+          CompanyName: '',
+          PhoneNumber: '',
+          Country: '',
+          Fax: '',
+          State: '',
+          lat: '',
+          long: '',
+          address: '',
+          premiumshipping: '',
+        }}
+        validationSchema={DisplayingErrorMessagesSchema}
+        onSubmit={async (values, { setSubmitting }) => {
+          await postCat(values)
+        }}
+      >
+          {({ errors, touched, getFieldProps }) => {
+            cstErrors = errors;
 
-                                return  (
-                                     <Form>
-                        
-                                     <div className="container main">
-                                             <div className="main-form">
-                                                 <img src={require('../../images/logo.png')} alt="Logo" className="logo" />
-                                     
-                                     
-                                                 <section>
-                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("CompanyName")} className="user-fields" type="text" id="name" placeholder="Enter your Company name"  />
-                                                                     <label for="name" className="user-label">Company Name</label>
-                                                                 </div>
-                                                                 {touched.CompanyName && errors.CompanyName && <div style={{ color: 'red', marginTop: 10 }}>{errors.CompanyName}</div>}
-                                     
-                                     
-                                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("email")} className="user-fields" type="text" id="Email" placeholder="Enter your email address" />
-                                                                     <label for="email" className="user-label">Email</label>
-                                                                 </div>
-                                                                 {touched.email && errors.email && <div style={{ color: 'red', marginTop: 10 }}>{errors.email}</div>}
-                                     
-                                                                 <div className="input-field">
-                                                                     <input {...getFieldProps("PhoneNumber")} className="user-fields" type="text" id="phone" placeholder="Enter your phone"  />
-                                                                     <label for="phone" className="user-label">Mobile Number</label>
-                                                                 </div>
-                                                                 {touched.PhoneNumber && errors.PhoneNumber && <div style={{ color: 'red', marginTop: 10 }}>{errors.phonenumber}</div>}
-                                     
-                                                                 <div className="input-field">
-                                                                     <input {...getFieldProps("password")} className="user-fields" type="text" id="Password" placeholder="Enter your password" />
-                                                                     <label for="Password" className="user-label">Password</label>
-                                                                 </div>
-                                                                 {touched.password && errors.password && <div style={{ color: 'red', marginTop: 10 }}>{errors.password}</div>}
-                                     
-                                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("confirmPassword")} className="user-fields" type="text" id="Repeat-Password" placeholder="Repeat your password"  />
-                                                                     <label for="Repeat-Password" className="user-label">Repeat-Password</label>
-                                                                 </div>
-                                                                 {touched.confirmPassword && errors.confirmPassword && <div style={{ color: 'red', marginTop: 10 }}>{errors.confirmPassword}</div>}
-                  
-                                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("Country")} className="user-fields" type="text" id="Repeat-Password" placeholder="Country"  />
-                                                                     <label for="Repeat-Password" className="user-label">Country</label>
-                                                                 </div>
-                                                                 {touched.Country && errors.Country && <div style={{ color: 'red', marginTop: 10 }}>{errors.Country}</div>}
-                  
-                                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("Fax")} className="user-fields" type="text" id="Repeat-Password" placeholder="Fax"  />
-                                                                     <label for="Repeat-Password" className="user-label">Fax</label>
-                                                                 </div>
-                                                                 {touched.Fax && errors.Fax && <div style={{ color: 'red', marginTop: 10 }}>{errors.Fax}</div>}
-                  
-                                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("State")} className="user-fields" type="text" id="Repeat-Password" placeholder="Input State"  />
-                                                                     <label for="Repeat-Password" className="user-label">State</label>
-                                                                 </div>
-                                                                 {touched.State && errors.State && <div style={{ color: 'red', marginTop: 10 }}>{errors.State}</div>}
-                  
-                  
-                                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("premiumshipping")} className="user-fields" type="text" id="premiumshipping" placeholder="Input Premium Shipping"  />
-                                                                     <label for="premiumshipping" className="user-label">Premium Shipping Amount</label>
-                                                                 </div>
-                                                                 {touched.premiumshipping && errors.premiumshipping && <div style={{ color: 'red', marginTop: 10 }}>{errors.premiumshipping}</div>}
-                  
-                  
-                                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("lat")} className="user-fields" type="text" id="Repeat-Password" placeholder="Input State"  />
-                                                                     <label for="Repeat-Password" className="user-label">Latitude</label>
-                                                                 </div>
-                                                                 {touched.lat && errors.lat && <div style={{ color: 'red', marginTop: 10 }}>{errors.State}</div>}
-                  
-                  
-                                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("long")} className="user-fields" type="text" id="Repeat-Password" placeholder="Input State"  />
-                                                                     <label for="Repeat-Password" className="user-label">Longitude</label>
-                                                                 </div>
-                                                                 {touched.long && errors.long && <div style={{ color: 'red', marginTop: 10 }}>{errors.long}</div>}
-                  
-                  
-                                 
-                  
-                                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("address")} className="user-fields" type="text" id="Repeat-Password" placeholder="Input address"  />
-                                                                     <label for="Repeat-Password" className="user-label">Address</label>
-                                                                 </div>
-                                                                 {touched.address && errors.address && <div style={{ color: 'red', marginTop: 10 }}>{errors.address}</div>}
-                  
-                                                 </section>
-                                                 <button disabled={loader} type="submit" className="submit-button">REGISTER</button>
-                  
-                                                 <div className="frgt-rmb">
-                                                     <div className="form-check">
-                                                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                                         <label className="form-check-label">Remember Me</label>
-                                                     </div>
-                                                     <a> Forgot Password</a>
-                                                 </div>
-                                             </div>
-                                          
-                                             <div className="showBar">
-                                                 <div className="line1"><hr /></div>
-                                                 <div className="line-text"><p>or</p></div>
-                                                 <div className="line2"><hr /></div>
-                                     
-                                             </div>
-                                             <div>
-                                                 <a onClick={()=>history.push('/printing/login')} className="page-link1">Login</a>
-                                             </div>
-                                         </div>
-                                     
-                                     </Form>
-                                  )
+            return (
+              <Form>
 
-                } }
-            </Formik>
-        }
-            <Snackbar
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-            open={open}
-            onClose={setOpen}
-            ContentProps={{
-              'aria-describedby': 'message-id',
-            }}
-            message={<span id="message-id">{message}</span>}
-          />
-</>
+                <div className="container main">
+                  <div className="main-form">
+                    <img src={require('../../images/logo.png')} alt="Logo" className="logo" />
+
+
+                    <section className='LoginSection'>
+                      <h1 className="text-themeOrange text-center mb-3 pb-3 mb-md-5 pb-md-5">Sign Up as Company</h1>
+                      <div className="form-group form-group-custom">
+                        <input  {...getFieldProps("CompanyName")} className="form-control" type="text" id="name" placeholder="Enter your Company name" />
+                        {/* <label for="name" className="user-label">Company Name</label> */}
+                      </div>
+                      {touched.CompanyName && errors.CompanyName && <div style={{ color: 'red', marginTop: 10 }}>{errors.CompanyName}</div>}
+
+
+                      <div className="form-group form-group-custom">
+                        <input  {...getFieldProps("email")} className="form-control" type="text" id="Email" placeholder="Enter your email address" />
+                        {/* <label for="email" className="user-label">Email</label> */}
+                      </div>
+                      {touched.email && errors.email && <div style={{ color: 'red', marginTop: 10 }}>{errors.email}</div>}
+
+                      <div className="form-group form-group-custom">
+                        <input {...getFieldProps("PhoneNumber")} className="form-control" type="text" id="phone" placeholder="Enter your phone" />
+                        {/* <label for="phone" className="user-label">Mobile Number</label> */}
+                      </div>
+                      {touched.PhoneNumber && errors.PhoneNumber && <div style={{ color: 'red', marginTop: 10 }}>{errors.phonenumber}</div>}
+
+                      <div className="form-group form-group-custom">
+                        <input {...getFieldProps("password")} className="form-control" type="password" id="Password" placeholder="Enter your password" />
+                        {/* <label for="Password" className="user-label">Password</label> */}
+                      </div>
+                      {touched.password && errors.password && <div style={{ color: 'red', marginTop: 10 }}>{errors.password}</div>}
+
+                      <div className="form-group form-group-custom">
+                        <input  {...getFieldProps("confirmPassword")} className="form-control" type="password" id="Repeat-Password" placeholder="Repeat your password" />
+                        {/* <label for="Repeat-Password" className="user-label">Repeat-Password</label> */}
+                      </div>
+                      {touched.confirmPassword && errors.confirmPassword && <div style={{ color: 'red', marginTop: 10 }}>{errors.confirmPassword}</div>}
+
+                      <div className="form-group form-group-custom">
+                        <input  {...getFieldProps("Country")} className="form-control" type="text" id="Repeat-Password" placeholder="Country" />
+                        {/* <label for="Repeat-Password" className="user-label">Country</label> */}
+                      </div>
+                      {touched.Country && errors.Country && <div style={{ color: 'red', marginTop: 10 }}>{errors.Country}</div>}
+
+                      <div className="form-group form-group-custom">
+                        <input  {...getFieldProps("Fax")} className="form-control" type="text" id="Repeat-Password" placeholder="Fax" />
+                        {/* <label for="Repeat-Password" className="user-label">Fax</label> */}
+                      </div>
+                      {touched.Fax && errors.Fax && <div style={{ color: 'red', marginTop: 10 }}>{errors.Fax}</div>}
+
+                      <div className="form-group form-group-custom">
+                        <input  {...getFieldProps("State")} className="form-control" type="text" id="Repeat-Password" placeholder="Input State" />
+                        {/* <label for="Repeat-Password" className="user-label">State</label> */}
+                      </div>
+                      {touched.State && errors.State && <div style={{ color: 'red', marginTop: 10 }}>{errors.State}</div>}
+
+
+                      <div className="form-group form-group-custom">
+                        <input  {...getFieldProps("premiumshipping")} className="form-control" type="text" id="premiumshipping" placeholder="Input Premium Shipping" />
+                        {/* <label for="premiumshipping" className="user-label">Premium Shipping Amount</label> */}
+                      </div>
+                      {touched.premiumshipping && errors.premiumshipping && <div style={{ color: 'red', marginTop: 10 }}>{errors.premiumshipping}</div>}
+
+
+                      <div className="form-group form-group-custom">
+                        <input  {...getFieldProps("lat")} className="form-control" type="text" id="Repeat-Password" placeholder="Input State" />
+                        {/* <label for="Repeat-Password" className="user-label">Latitude</label> */}
+                      </div>
+                      {touched.lat && errors.lat && <div style={{ color: 'red', marginTop: 10 }}>{errors.State}</div>}
+
+
+                      <div className="form-group form-group-custom">
+                        <input  {...getFieldProps("long")} className="form-control" type="text" id="Repeat-Password" placeholder="Input State" />
+                        {/* <label for="Repeat-Password" className="user-label">Longitude</label> */}
+                      </div>
+                      {touched.long && errors.long && <div style={{ color: 'red', marginTop: 10 }}>{errors.long}</div>}
+
+
+
+
+                      <div className="form-group form-group-custom">
+                        <input  {...getFieldProps("address")} className="form-control" type="text" id="Repeat-Password" placeholder="Input address" />
+                        {/* <label for="Repeat-Password" className="user-label">Address</label> */}
+                      </div>
+                      {touched.address && errors.address && <div style={{ color: 'red', marginTop: 10 }}>{errors.address}</div>}
+                      <div className="d-flex flex-column flex-md-row justify-content-between align-items-center marginY-5 font-16px">
+                        <div className="form-check">
+                          <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                          <label className="form-check-label font-weight-normal ml-2">Remember Me</label>
+                        </div>
+                        <a className="text-decoration-underline font-weight-normal"> Forgot Password</a>
+                      </div>
+                      <button disabled={loader} type="submit" className="submit-button mt-0 font-21px">REGISTER</button>
+                      <div className="my-3 my-md-5">
+                        <a onClick={() => history.push('/printing/login')} className="page-link1 font-16px font-weight-normal text-dark">Login</a>
+                      </div>
+                    </section>
+
+
+                  </div>
+
+
+
+                </div>
+
+              </Form>
+            )
+
+          }}
+        </Formik>
+    }
+    <Snackbar
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={open}
+      onClose={setOpen}
+      ContentProps={{
+        'aria-describedby': 'message-id',
+      }}
+      message={<span id="message-id">{message}</span>}
+    />
+  </>
 }

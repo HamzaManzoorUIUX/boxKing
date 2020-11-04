@@ -2,14 +2,14 @@
     --themeOrange:#f5aa75;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,500;1,800&display=swap');
-*:not(.fa){
+*:not(.fa,.fas){
   font-family: 'Poppins', sans-serif !important ;
 }
 .bg-themeOrange{
-    background-color: var(--themeOrange);
+    background-color: var(--themeOrange) !important;
   }
   .text-themeOrange{
-    color: var(--themeOrange);
+    color: var(--themeOrange) !important;
   }
 
 /* forms */
@@ -69,9 +69,27 @@ height: 60px !important;
     justify-content: center;
     align-items: center;
 }
+.share-toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px !important;
+    color: var(--themeOrange) !important;
+}
+.share-toggle:before{
+display: none;
+
+}
 @media(max-width:992px){
     #myCarousel .carousel-item h4{
         font-size: 42px !important;
+    }
+    .class-border-cs{
+        border: none;
+        padding: 0px;
+    }
+    .we-offer-area.text-center .item{
+        padding: 33px 20px 32px !important;
     }
 }
 @media(max-width:767px){
@@ -86,6 +104,3 @@ height: 60px !important;
     #myCarousel .carousel-item h4{
         font-size: 25px !important;
     }}
-#myCarousel .carousel-item .mask{
-
-}

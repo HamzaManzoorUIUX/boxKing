@@ -5,7 +5,7 @@ export default () => {
     return    <section class="footer-cs">
     <div class="container-fluid cont-footer-cs">
         <div class="row">
-            <div class="col-md-3 col-margin-cs">
+            <div class="col-12 col-md-6 col-lg-3 col-margin-cs">
                 <div class="row">
                     <div class="col-md-12 product-heading-cs">
                         <ul>
@@ -26,7 +26,7 @@ export default () => {
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-margin-cs">
+            <div class="col-12 col-md-6 col-lg-3 col-margin-cs">
                 <div class="row class-border-cs">
                     <div class="col-md-12 product-heading-cs">
                         <ul>
@@ -46,7 +46,7 @@ export default () => {
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-margin-cs">
+            <div class="col-12 col-md-6 col-lg-3 col-margin-cs">
                 <div class="row class-border-cs">
                     <div class="col-md-12 product-heading-cs">
                         <ul>
@@ -75,7 +75,7 @@ export default () => {
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-margin-cs">
+            <div class="col-12 col-md-6 col-lg-3 col-margin-cs">
                 <div class="row class-border-cs">
                     <div class="col-md-12 product-heading-cs">
                         <ul>
@@ -90,7 +90,7 @@ export default () => {
                             </li>
                             <li>Mon-Fri:8am - 5pm</li>
                             <li>Contact Form</li>
-                            <li>service@saxoprint.co.uk</li>
+                            <li className="text-break">service@saxoprint.co.uk</li>
                         </ul>
                     </div>
                 </div>

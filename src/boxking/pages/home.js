@@ -363,10 +363,11 @@ const handleActiveIndex=(val)=>{
               <div className="row mb-5">
                 {
                   products.map(x=><div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3">
-                  <a  >
+                  <a onClick={()=> history.push("/productdetial",{product:x})}   className="card-link">
                     <div className="card product-card">
                     <div  className="d-flex justify-content-end">
-                <a onClick={()=> history.push("/productdetial",{product:x})}   className="card-link">£{x.unitCost}</a>
+                    £{x.unitCost}
+                
                       </div>
                       <div  className="product-img">
                         <img  className="card-img img-responsive" src={`${urlImg}system/public/dist/img/upload/${x.image}`}  alt="Vans" />
@@ -395,7 +396,7 @@ const handleActiveIndex=(val)=>{
 
           <section className="detail-boxes">
             <div className="container">
-              <div className="row mt-5">
+              <div className="row mt-5 flex-column-reverse flex-md-row">
                 <div className="col-md-6">
                   <img className="detail-img" src="https://www.saxoprint.co.uk/-/media/saxoprint/products/teaser/promotional-material/flyers/flyers.ashx?mh=422&mw=760&hash=65C03E8262A126313A42B4D1787E5B42" />
                 </div>
@@ -435,7 +436,7 @@ const handleActiveIndex=(val)=>{
 
           <section className="detail-boxes">
             <div className="container"><hr />
-              <div className="row mt-5">
+              <div className="row mt-5 flex-column-reverse flex-md-row">
                 <div className="col-md-6">
                   <img className="detail-img" src="https://www.saxoprint.co.uk/-/media/saxoprint/products/teaser/business-stationery/business-cards/business-cards.ashx?mh=422&mw=760&hash=F7FEF88C7AFBF6CAA0775A60E107C4DF" />
                 </div>
@@ -494,7 +495,7 @@ const handleActiveIndex=(val)=>{
                 </div>
               </div>
               <div className="row our-offer-items less-carousel">
-                <div className="col-md-4 col-sm-6 equal-height adjfiw3">
+                <div className="col-12 col-md-6 col-lg-4 equal-height adjfiw3">
                   <div className="item">
                     <i className="fa fa-envelope"></i>
                     <h4>Personal contact partner</h4>
@@ -503,7 +504,7 @@ const handleActiveIndex=(val)=>{
                             </p>
                   </div>
                 </div>
-                <div className="col-md-4 col-sm-6 equal-height adjfiw3">
+                <div className="col-12 col-md-6 col-lg-4 equal-height adjfiw3">
                   <div className="item">
                     <i className="fa fa-envelope"></i>
                     <h4>Payment on account</h4>
@@ -512,8 +513,7 @@ const handleActiveIndex=(val)=>{
                             </p>
                   </div>
                 </div>
-
-                <div className="col-md-4 col-sm-6 equal-height adjfiw3">
+                <div className="col-12 col-md-6 col-lg-4 equal-height adjfiw3">
                   <div className="item">
                     <i className="fa fa-search"></i>
                     <h4>Transparent prices</h4>
@@ -522,8 +522,7 @@ const handleActiveIndex=(val)=>{
                             </p>
                   </div>
                 </div>
-
-                <div className="col-md-4 col-sm-6 equal-height adjfiw3">
+                <div className="col-12 col-md-6 col-lg-4 equal-height adjfiw3">
                   <div className="item">
                     <i className="fa fa-check"></i>
                     <h4>Standard artwork check</h4>
@@ -532,8 +531,7 @@ const handleActiveIndex=(val)=>{
                             </p>
                   </div>
                 </div>
-
-                <div className="col-md-4 col-sm-6 equal-height adjfiw3">
+                <div className="col-12 col-md-6 col-lg-4 equal-height adjfiw3">
                   <div className="item">
                     <i className="fa fa-user"></i>
                     <h4>Artwork acceptance</h4>
@@ -542,8 +540,7 @@ const handleActiveIndex=(val)=>{
                             </p>
                   </div>
                 </div>
-
-                <div className="col-md-4 col-sm-6 equal-height adjfiw3">
+                <div className="col-12 col-md-6 col-lg-4 equal-height adjfiw3">
                   <div className="item">
                     <i className="fa fa-history"></i>
                     <h4>Personal contact partner</h4>
@@ -619,7 +616,9 @@ const handleActiveIndex=(val)=>{
                           <a className="share-icon googleplus" href="#"><span className="fa fa-google-plus"></span></a>
                         </div>
 
-                        <a id="share" className="share-toggle share-icon" href="#"></a>
+                        <a id="share" className="share-toggle share-icon text-themeOrange" href="#">
+                          <span className="fas fa-share-alt"></span>
+                        </a>
                       </div>
 
                       <div className="card__meta">
@@ -650,7 +649,9 @@ const handleActiveIndex=(val)=>{
                           <a className="share-icon googleplus" href="#"><span className="fa fa-google-plus"></span></a>
                         </div>
 
-                        <a id="share" className="share-toggle share-icon" href="#"></a>
+                        <a id="share" className="share-toggle share-icon" href="#">
+                        <span className="fas fa-share-alt text-themeOrange"></span>
+                        </a>
                       </div>
 
                       <div className="card__meta">
@@ -681,7 +682,9 @@ const handleActiveIndex=(val)=>{
                           <a className="share-icon googleplus" href="#"><span className="fa fa-google-plus"></span></a>
                         </div>
 
-                        <a id="share" className="share-toggle share-icon" href="#"></a>
+                        <a id="share" className="share-toggle share-icon" href="#">
+                        <span className="fas fa-share-alt text-themeOrange"></span>
+                        </a>
                       </div>
 
                       <div className="card__meta">

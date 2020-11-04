@@ -105,29 +105,29 @@ export default () => {
                                         <section className="LoginSection">
                                             <h1 className="text-themeOrange text-center mb-3 pb-3 mb-md-5 pb-md-5">Login</h1>
 
-                                            <div className="form-group form-group-email">
+                                            <div className="form-group form-group-custom email">
                                                 <input  {...getFieldProps("email")} className="form-control py-3" type="text" id="Email" placeholder="Enter your email address" />
                                                 {/* <label for="email" className="user-label">Email</label> */}
                                             </div>
                                             {touched.email && errors.email && <div style={{ color: 'red', marginTop: 10 }}>{errors.email}</div>}
 
 
-                                            <div className="from-group form-group-password">
+                                            <div className="from-group form-group-custom password">
                                                 <input {...getFieldProps("password")} className="form-control" type="text" id="Password" placeholder="Enter your password" />
                                                 {/* <label for="Password" className="form-control bg-white">Password</label> */}
                                             </div>
                                             {touched.password && errors.password && <div style={{ color: 'red', marginTop: 10 }}>{errors.password}</div>}
-                                            <div className="frgt-rmb marginY-5 font-16px">
+                                            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center marginY-5 font-16px">
                                                 <div className="form-check">
-                                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                                    <label className="form-check-label font-weight-bolder">Remember Me</label>
+                                                    <input type="checkbox" className="form-check-input mr-2" id="exampleCheck1" />
+                                                    <label className="form-check-label font-weight-normal ml-2">Remember Me</label>
                                                 </div>
-                                                <a className="text-decoration-underline  font-weight-bold"> Forgot Password?</a>
+                                                <a className="text-decoration-underline font-weight-normal"> Forgot Password?</a>
                                             </div>
                                             <button disabled={(errorDsp == true ? true : false)} type="submit" className="submit-button mt-0 font-21px">Login</button>
-                                            <div className="d-flex flex-row justify-content-between my-3 my-md-5">
-                                                <Link to="/register" className="page-link1 font-16px font-weight-bold">Don,t have an account ?</Link>
-                                                <Link to="/admin/auth/login" className="page-link1 font-16px font-weight-bold text-decoration-underline">Login as Admin</Link>
+                                            <div className="d-flex flex-column flex-md-row justify-content-between my-3 my-md-5">
+                                                <Link to="/register" className="page-link1 font-16px font-weight-normal text-dark">Don,t have an account ?</Link>
+                                                <Link to="/admin/auth/login" className="page-link1 font-16px font-weight-normal text-decoration-underline text-dark">Login as Admin</Link>
                                             </div>
                                         </section>
 

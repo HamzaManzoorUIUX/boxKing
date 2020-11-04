@@ -11,11 +11,11 @@
   .text-themeOrange{
     color: var(--themeOrange);
   }
-.form-group-email,.form-group-password{
+.form-group-custom{
 position: relative;
 
 }
-.form-group-email::before,.form-group-password::before{
+/* .form-group-custom::before{
 position: absolute;
 font-size: 1.5rem;
 font-family: 'Poppins';
@@ -24,16 +24,19 @@ line-height: 1;
 left: 10px;
 top:20px;
 color: rgb(205, 206, 211) ;
+} */
+/* .form-group-custom.email::before{
+content: '\0040';
 }
-.form-group-email::before{
-content: '@';
-}
-.form-group-password::before{
+.form-group-custom.password::before{
 content: '\f023';
 }
-.form-group-email>.form-control,.form-group-password>.form-control{
+.phone{
+    content: "\260F";
+} */
+.form-group-custom>.form-control{
     background-color: white;
-padding-left: 40px;
+/* padding-left: 40px; */
 height: 60px !important;
 }
 

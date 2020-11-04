@@ -123,35 +123,36 @@ return <>
                                                  <img src={require('../images/logo.png')} alt="Logo" className="logo" />
                                      
                                      
-                                                 <section>
-                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("name")} className="user-fields" type="text" id="name" placeholder="Enter your name"  />
-                                                                     <label for="name" className="user-label">Full Name</label>
+                                                 <section className="LoginSection">
+                                            <h1 className="text-themeOrange text-center mb-3 pb-3 mb-md-5 pb-md-5">Sign Up</h1>
+                                                 <div className="form-group form-group-custom">
+                                                                     <input  {...getFieldProps("name")} className="form-control" type="text" id="name" placeholder="Enter your name"  />
+                                                                     {/* <label for="name" className="user-label">Full Name</label> */}
                                                                  </div>
                                                                  {touched.name && errors.name && <div style={{ color: 'red', marginTop: 10 }}>{errors.name}</div>}
                                      
                                      
-                                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("email")} className="user-fields" type="text" id="Email" placeholder="Enter your email address" />
-                                                                     <label for="email" className="user-label">Email</label>
+                                                                 <div className="form-group form-group-custom">
+                                                                     <input  {...getFieldProps("email")} className="form-control" type="text" id="Email" placeholder="Enter your email address" />
+                                                                     {/* <label for="email" className="user-label">Email</label> */}
                                                                  </div>
                                                                  {touched.email && errors.email && <div style={{ color: 'red', marginTop: 10 }}>{errors.email}</div>}
                                      
-                                                                 <div className="input-field">
-                                                                     <input {...getFieldProps("phonenumber")} className="user-fields" type="text" id="phone" placeholder="Enter your phone"  />
-                                                                     <label for="phone" className="user-label">Mobile Number</label>
+                                                                 <div className="form-group form-group-custom">
+                                                                     <input {...getFieldProps("phonenumber")} className="form-control" type="text" id="phone" placeholder="Enter your phone"  />
+                                                                     {/* <label for="phone" className="user-label">Mobile Number</label> */}
                                                                  </div>
                                                                  {touched.phonenumber && errors.phonenumber && <div style={{ color: 'red', marginTop: 10 }}>{errors.phonenumber}</div>}
                                      
-                                                                 <div className="input-field">
-                                                                     <input {...getFieldProps("password")} className="user-fields" type="text" id="Password" placeholder="Enter your password" />
-                                                                     <label for="Password" className="user-label">Password</label>
+                                                                 <div className="form-group form-group-custom">
+                                                                     <input {...getFieldProps("password")} className="form-control" type="text" id="Password" placeholder="Enter your password" />
+                                                                     {/* <label for="Password" className="user-label">Password</label> */}
                                                                  </div>
                                                                  {touched.password && errors.password && <div style={{ color: 'red', marginTop: 10 }}>{errors.password}</div>}
                                      
-                                                                 <div className="input-field">
-                                                                     <input  {...getFieldProps("confirmPassword")} className="user-fields" type="text" id="Repeat-Password" placeholder="Repeat your password"  />
-                                                                     <label for="Repeat-Password" className="user-label">Repeat-Password</label>
+                                                                 <div className="form-group form-group-custom">
+                                                                     <input  {...getFieldProps("confirmPassword")} className="form-control" type="text" id="Repeat-Password" placeholder="Repeat your password"  />
+                                                                     {/* <label for="Repeat-Password" className="user-label">Repeat-Password</label> */}
                                                                  </div>
                                                                  {touched.confirmPassword && errors.confirmPassword && <div style={{ color: 'red', marginTop: 10 }}>{errors.confirmPassword}</div>}
                   

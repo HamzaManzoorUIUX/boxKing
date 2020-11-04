@@ -1,0 +1,282 @@
+
+/*footer style*/
+.footer-cs{
+	width: 100% !important;
+	background-color: #343434;
+	color: #b1b1b1;
+
+}
+.product-heading-cs h5{
+	font-style: normal;
+	    font-family: 'Poppins';
+      color: #c7c7c7;
+      font-size: 2.2rem;
+    font-weight: normal;
+}
+.product-heading-cs ul{
+	list-style: none;
+}
+.Products-cs ul{
+	list-style: none;
+	padding-left: -100px;
+  margin-top: 7px;
+}
+.Products-cs ul li{
+	padding-top: 10px !important
+}
+.Products-cs ul li a{
+	color: #b1b1b1;
+  text-decoration: none;
+  font-size: 1.36rem!important;
+}
+.Products-cs ul li :hover{
+	padding-left: 10px !important;
+	color:#f5aa75;
+	transition:0.3s ease-in-out;
+
+}
+.class-border-cs{
+	border-left: 1px solid #696969;
+  padding: 0px 0px 0px 10px;
+}
+.Subscribe-cs ul{
+	list-style: none;
+  margin-top: 10px;
+}
+.Subscribe-cs ul li p{
+	font-size:1.36rem!important
+}
+
+.Products-cs ul li{
+	font-size:1.36rem!important
+}
+
+
+.bg-color-cs{
+	background-color: #444444 !important;
+	border-color: #444444 !important;
+}
+.small, .small
+{
+
+  font-family: Poppins;
+  font-size: 94%;
+    font-weight: 500;
+    font-family: Poppins;
+}
+
+.hr-line-cs{
+	border: 1px solid #484848;
+}
+
+.col-margin-cs{
+	margin-top: 50px !important;
+}
+
+.cont-footer-cs
+{
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.phone-no-cs
+{
+  font-size: 20px;
+  color: #c7c7c7 !important;
+}
+
+.social-icon-top
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	margin-top: -3px;
+}
+
+.social-icon-top li
+{
+	float: right;
+	margin-left: 15px;
+}
+
+.social-icon-top li a
+{
+	font-size: 12px;
+	color: #e8e8e8;
+}
+
+
+
+
+
+
+
+
+/*Header*/
+
+.utility-nav-cs {
+  background: #333333;
+  padding: 0.5rem 1rem;
+}
+
+.utility-nav-cs p {
+  margin-bottom: 0;
+  color: white;
+}
+
+
+.navbar-brand-cs{
+	margin-left: 0px !important;
+}
+.nav-link-cs{
+	color: black !important;
+  font-size: 16px;
+}
+.nav-link-cs:hover{
+	color: #f5aa75 !important;
+}
+
+.main-title-cs
+{
+  margin-right: 10px !important;
+  
+}
+
+
+.nav-item
+{
+  margin-left: 20px !important
+}
+
+.main-title-cs a
+{
+  font-size: 15px;
+}
+
+.nav-l-ico-cs
+{
+  margin: 0.1000rem !important;
+  padding: 0.4rem 0.4rem !important;
+  text-transform: capitalize;
+}
+
+  .cart-dropdown-cs
+{
+  width:100% !important;
+  
+  max-height: 350px;
+  overflow-y: auto;
+  left:0 !important;
+  padding:15px;
+  border:none !important;
+  box-shadow: 1px 2px 50px 2px #f1f1f1;
+  border-radius: 0px !important
+
+}
+
+.cart-imgs-cs
+{
+  width: 80px;
+}
+
+
+.cart-title-cs
+{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sticky-wrapper {
+  position: relative;
+  height: 3rem; /* We need to change this value */
+}
+
+.sticky .sticky-inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+@media (max-width: 992px) {
+  .navbar-collapse
+{
+  margin-left: 5px!important;
+}
+}
+
+
+
+.navbar-collapse{
+ 
+  margin-left: -5.6%;
+}  
+
+
+
+
+.navbrr-tt{
+  margin: 0px!important;
+  padding: 0px!important;
+  width: 140px!important;
+  padding-top: 6px!important;
+}
+
+.cstbtns2
+{
+  border-radius: 0px !important;
+  text-transform: capitalize !important;
+  background-color: #f5aa75 !important;
+  color: white !important;
+  padding: 0px!important;
+  font-size: 1.2rem!important;
+  padding-top: 8px!important;
+  padding-left: 12px!important;
+  padding-right: 12px!important;
+  margin-left: 17px!important;
+  margin-right: 21px!important;
+  padding-bottom: 9px!important;
+  height: 42px!important;
+}
+
+.cstbtns2 :hover
+{
+  color:white!important;
+}
+
+.bxshd-none12
+{
+  box-shadow: none!important;
+}
+
+.bxshd-none12dsd
+{
+  box-shadow: 1px 2px 50px 2px #f1f1f1!important;
+}
+
+.displsrye
+{
+  display: none!important;
+}
+
+@media (max-width: 1316px) {
+  nav
+{
+  margin-right: 10%!important
+}
+}
+
+@media (max-width: 1266px) {
+  nav
+{
+  margin-right: 5%!important
+}
+}
+@media (max-width: 1130px) {
+  nav
+{
+  margin-right: 0%!important;
+  margin-left: 0%!important;
+}
+}
+

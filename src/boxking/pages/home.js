@@ -254,9 +254,9 @@ const handleActiveIndex=(val)=>{
               <div className="carousel-inner">
                 <div className={activeIndex==0?"carousel-item active":"carousel-item"}>
                   <div className="mask flex-center">
-                    <div className="container">
+                    <div className="container h-100 d-flex justify-content-center align-items-center">
                       <div className="row align-items-center">
-                        <div className="col-md-6 offset-md-1 col-12 order-md-1 order-2">
+                        <div className="col-md-6 offset-md-1 col-12 mt-5 mt-md-0">
                           <h4>
                             Copying and <br />
                                             Printing Center
@@ -264,7 +264,7 @@ const handleActiveIndex=(val)=>{
                           <p>We bring design together with technology</p>
                           <button type="button" className="btn change-btn pl-4 pr-4 mb-3">Download templete1</button>
                         </div>
-                        <div className="col-md-5 col-12 order-md-2 order-1">
+                        <div className="col-md-5 col-12">
                           <img src="https://cdn.shopify.com/s/files/1/0018/1587/1546/products/custom-design-corrugated-mailer-boxes_1024x1024.png?v=1591919291" className="mx-auto" alt="slide" />
                         </div>
                       </div>
@@ -273,9 +273,9 @@ const handleActiveIndex=(val)=>{
                 </div>
                 <div className={activeIndex==1?"carousel-item active":"carousel-item"}>
                   <div className="mask flex-center">
-                    <div className="container">
+                    <div className="container h-100 d-flex justify-content-center align-items-center">
                       <div className="row align-items-center">
-                        <div className="col-md-6 offset-md-1 col-12 order-md-1 order-2">
+                        <div className="col-md-6 offset-md-1 col-12 mt-5 mt-md-0">
                           <h4>
                             Present your <br />
                                             awesome product
@@ -283,7 +283,7 @@ const handleActiveIndex=(val)=>{
                           <p>We bring design together with technology</p>
                           <button type="button" className="btn change-btn pl-4 pr-4 mb-3">Download templete2</button>
                         </div>
-                        <div className="col-md-5 col-12 order-md-2 order-1">
+                        <div className="col-md-5 col-12">
                           <img src="https://www.blueboxpackaging.com/wp-content/uploads/2018/12/Custom-Cardboard-Espresso-You-Reverse-Tuck-Coffee-Boxes.jpg" className="mx-auto" alt="slide" />
                         </div>
                       </div>
@@ -292,9 +292,9 @@ const handleActiveIndex=(val)=>{
                 </div>
                 <div className={activeIndex==2?"carousel-item active":"carousel-item"}>
                   <div className="mask flex-center">
-                    <div className="container">
+                    <div className="container h-100 d-flex justify-content-center align-items-center">
                       <div className="row align-items-center">
-                        <div className="col-md-6 offset-md-1 col-12 order-md-1 order-2">
+                        <div className="col-md-6 offset-md-1 col-12 mt-5 mt-md-0">
                           <h4>
                             Present your <br />
                                             awesome product
@@ -302,7 +302,7 @@ const handleActiveIndex=(val)=>{
                           <p>We bring design together with technology</p>
                           <button type="button" className="btn change-btn pl-4 pr-4 mb-3">Download templete3</button>
                         </div>
-                        <div className="col-md-5 col-12 order-md-2 order-1">
+                        <div className="col-md-5 col-12">
                           <img src="https://cdn.shopify.com/s/files/1/0018/1587/1546/products/custom-branded-product-box-tuck-end_800x.png?v=1591919254" className="mx-auto" alt="slide" />
                         </div>
                       </div>

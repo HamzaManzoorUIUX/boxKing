@@ -32,7 +32,7 @@ export default () => {
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState("Opps Something wen't wrong");
     const [errorDsp, seterrorDsp] = useState(false);
-    const [loaderMain,setloaderMain]=useState(false);
+    const [loaderMain, setloaderMain] = useState(false);
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -75,14 +75,14 @@ export default () => {
         return false;
     }
     return <>
-      { loaderMain? <div className="sweet-loading" style={{position:'absolute',top:'50%',left:'50%'}}>
-        <ClipLoader
-          css={override}
-          size={20}
-          color={"#f9b541"}
-          loading={true}
-        />
-      </div>:   <Formik
+        { loaderMain ? <div className="sweet-loading" style={{ position: 'absolute', top: '50%', left: '50%' }}>
+            <ClipLoader
+                css={override}
+                size={20}
+                color={"#f9b541"}
+                loading={true}
+            />
+        </div> : <Formik
             initialValues={{
 
                 email: '',
@@ -93,65 +93,52 @@ export default () => {
                 await postCat(values)
             }}
         >
-            {({ errors, touched, getFieldProps }) => {
-                cstErrors = errors;
+                {({ errors, touched, getFieldProps }) => {
+                    cstErrors = errors;
 
-                return (
-                    <Form>
+                    return (
+                        <Form>
 
-                        <div className="container main">
-                            <div className="main-form">
-                                <img src={require('../../images/logo.png')} alt="Logo" className="logo" />
-
-
-                                <section>
+                            <div className="container main">
+                                <div className="main-form">
+                                    <img src={require('../../images/logo.png')} alt="Logo" className="logo" />
 
 
-                                    <div className="input-field">
-                                        <input  {...getFieldProps("email")} className="user-fields" type="text" id="Email" placeholder="Enter your email address" />
-                                        <label for="email" className="user-label">Email</label>
+                                    <section className="LoginSection">
+                                    <h1 className="text-themeOrange text-center mb-3 pb-3 mb-md-5 pb-md-5">Login as Company</h1>
+                                        <div className="form-group form-group-custom">
+                                            <input  {...getFieldProps("email")} className="form-control" type="text" id="Email" placeholder="Enter your email address" />
+                                            {/* <label for="email" className="user-label">Email</label> */}
+                                        </div>
+                                        {touched.email && errors.email && <div style={{ color: 'red', marginTop: 10 }}>{errors.email}</div>}
+
+
+                                        <div className="form-group form-group-custom">
+                                            <input {...getFieldProps("password")} className="form-control" type="password" id="Password" placeholder="Enter your password" />
+                                            {/* <label for="Password" className="user-label">Password</label> */}
+                                        </div>
+                                        {touched.password && errors.password && <div style={{ color: 'red', marginTop: 10 }}>{errors.password}</div>}
+                                        <div className="d-flex flex-column flex-md-row justify-content-between align-items-center marginY-5 font-16px">
+                                        <div className="form-check">
+                                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                            <label className="form-check-label font-weight-normal ml-2">Remember Me</label>
+                                        </div>
+                                        <a className="text-decoration-underline font-weight-normal"> Forgot Password</a>
                                     </div>
-                                    {touched.email && errors.email && <div style={{ color: 'red', marginTop: 10 }}>{errors.email}</div>}
-
-
-                                    <div className="input-field">
-                                        <input {...getFieldProps("password")} className="user-fields" type="text" id="Password" placeholder="Enter your password" />
-                                        <label for="Password" className="user-label">Password</label>
-                                    </div>
-                                    {touched.password && errors.password && <div style={{ color: 'red', marginTop: 10 }}>{errors.password}</div>}
-                                </section>
-                                <button disabled={(errorDsp == true ? true : false)} type="submit" className="submit-button">Login</button>
-
-                                <div className="frgt-rmb">
-                                    <div className="form-check">
-                                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                        <label className="form-check-label">Remember Me</label>
-                                    </div>
-                                    <a> Forgot Password</a>
+                                    <button disabled={(errorDsp == true ? true : false)} type="submit" className="submit-button mt-0 font-21px">Login</button>
+                                    <div className="d-flex flex-column flex-wrap flex-md-row justify-content-between my-3 my-md-5">
+                                    <Link to="/printing/register" className="page-link1 font-16px font-weight-normal text-dark">Don,t have an account ?</Link>
+                                    <Link to="/login" className="page-link1 font-16px font-weight-normal text-dark">Login as user</Link>
+                                    <Link to="/admin/auth/login" className="page-link1 font-16px font-weight-normal text-dark">Login as Admin</Link>
+                                </div>
+                                    </section>
                                 </div>
                             </div>
+                        </Form>
+                    )
 
-                            <div className="showBar">
-                                <div className="line1"><hr /></div>
-                                <div className="line-text"><p>or</p></div>
-                                <div className="line2"><hr /></div>
-
-                            </div>
-                            <div>
-                                <Link to="/printing/register" className="page-link1">Don,t have an account ?</Link>
-                                <br />
-                                <Link to="/login" className="page-link1">Login as user</Link>
-                                <br />
-                                <Link to="/admin/auth/login" className="page-link1">Login as Admin</Link>
-                            </div>
-
-                        </div>
-
-                    </Form>
-                )
-
-            }}
-        </Formik>
+                }}
+            </Formik>
         }
         <Snackbar
             anchorOrigin={{ vertical: 'top', horizontal: 'right' }}

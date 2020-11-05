@@ -146,7 +146,7 @@ export default ()=>{
 
                    
                         <div className="accordion1 mb-5">
-                        <div className="accordion-item">
+                        <div className="accordion-item" onClick={(e)=>{hamza(e)}}>
                           <a>Why is the moon sometimes out during the day?</a>
                           <div className="content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
@@ -184,4 +184,8 @@ export default ()=>{
         <Footer />
         </div>
 </>
+}
+function hamza(e){
+  console.log(e.target);
+  console.log(this);
 }

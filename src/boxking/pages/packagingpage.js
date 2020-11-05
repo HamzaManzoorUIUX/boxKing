@@ -27,11 +27,11 @@ export default () => {
         const categories = async () => {
             const { data, status } = await repository.CategoriesComplete().then(x => x).then(x => x);
             if (status == 200) {
-              setCategories(_.take(data, 12));
-      
+                setCategories(_.take(data, 12));
+
             }
-      
-          }
+
+        }
         // if (location.state && location.state.productType) {
         //   setCategories(location.state.productType);
         // }
@@ -82,13 +82,13 @@ export default () => {
                     <div className="col-md-6">
                         <h3 className="info-title">Materials for Packaging with Lids</h3>
 
-                        <ul className="circle-ul mt-4">
+                        <ul className="circle-ul mt-4 font-16px">
                             <li>Adjustable dimensions</li>
                             <li>21 styles in 1 billion variations</li>
                             <li>Online Designer with 3D preview</li>
                         </ul>
 
-                        <button className="btn btn-theme mt-3">Select Packaging</button>
+                        <button className="btn btn-theme mt-3 font-16px">Select Packaging</button>
                     </div>
                 </div>
             </div>
@@ -96,10 +96,10 @@ export default () => {
         <section className="we-offer-area" style={{ backgroundColor: 'white' }}>
             <div className="container">
 
-               
-              
+
+
                 <div className="col-md-12 mt-3 mb-3 sticky-inner"  >
-                    <div className="nsskseucc side-sticky" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <div className="nsskseucc side-sticky  font-16px" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a className={TabIndex == 0 ? "nav-link activelinkwwe213" : "nav-link"} id="v-pills-home-tab" data-toggle="pill" onClick={() => {
                             setTabIndex(0)
                             refmain0.current.scrollIntoView({ behavior: 'smooth' })
@@ -119,26 +119,26 @@ export default () => {
                     </div>
 
                 </div>
- 
+
                 <div className="row mb-5 text-center">
-                {
-                categories.map(x=><div className="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6 block">
-                <div className="content category-card">
-                  <center>
-                    <img src={`${urlImg}system/public/dist/img/categories/${x.image}`} className="cate-img" />
-                  </center>
-                  <a onClick={()=>{
-                            history.push("/categories/productTypes",{productType:x.product_type})
-                          }} >
-                    <div className="content-overlay"></div>
-                    <div className="content-details fadeIn-bottom">
-                      <h3 className="content-title">{x.name}</h3>
-                    </div>
-                  </a>
-                </div>
-              </div>
-          )
-              }
+                    {
+                        categories.map(x => <div className="mt-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6 block">
+                            <div className="content category-card">
+                                <center>
+                                    <img src={`${urlImg}system/public/dist/img/categories/${x.image}`} className="cate-img" />
+                                </center>
+                                <a onClick={() => {
+                                    history.push("/categories/productTypes", { productType: x.product_type })
+                                }} >
+                                    <div className="content-overlay"></div>
+                                    <div className="content-details fadeIn-bottom">
+                                        <h3 className="content-title">{x.name}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        )
+                    }
                 </div>
 
 
@@ -146,12 +146,12 @@ export default () => {
         </section>
 
 
-        <section class="detail-boxes">
+        <section class="detail-boxes font-16px">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h2 class="cat-title"> Product Information for our Packaging</h2><br></br>
-                        <h5>Packaging in Overview</h5>
+                        <h5 className=" font-16px">Packaging in Overview</h5>
                     </div>
                 </div>
                 <div class="row mt-4 mb-3">
@@ -358,7 +358,7 @@ export default () => {
                             </div>
                         </div>
 
-                        <ul class="circle-ul">
+                        <ul class="circle-ul font-16px">
                             <li>Protecting and transporting your products</li>
                             <li>Product presentations</li>
                             <li>Advertising products</li>
@@ -385,13 +385,11 @@ export default () => {
                     <div class="col-md-6">
                         <img class="detail-img" src="https://www.saxoprint.co.uk/-/media/saxoprint/products/details/material/packaging/chromo-board-white.ashx?mh=422&mw=760&hash=F6E7F70E59C5E21280B70C735F19949F" />
                     </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="cat-title"> 350gsm GC1 chromo board white</h2>
-                            </div>
-                        </div>
-                        <p class="mt-2">This classic packaging material has a white silk matt finish on the outside, guarantees a colour-accurate print and is strong and flexible.</p>
+                    <div class="col-md-6 myTextCenter">
+
+                        <h2 class="cat-title"> 350gsm GC1 chromo board white</h2>
+
+                        <p class="mt-2 font-16px">This classic packaging material has a white silk matt finish on the outside, guarantees a colour-accurate print and is strong and flexible.</p>
 
                     </div>
                 </div>
@@ -405,13 +403,9 @@ export default () => {
                     <div class="col-md-6">
                         <img class="detail-img" src="https://www.saxoprint.co.uk/-/media/saxoprint/products/teaser/promotional-material/posters/posters.ashx?mh=422&mw=760&hash=3926AD33ECC753A97246BF80075C0932" />
                     </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="cat-title"> 350gsm GZ1 chromium sulphate cardboard pure white</h2>
-                            </div>
-                        </div>
-                        <p class="mt-2">This pure white paperboard is very strong and therefore ideal for high-quality, premium packaging.</p>
+                    <div class="col-md-6 myTextCenter">
+                        <h2 class="cat-title"> 350gsm GZ1 chromium sulphate cardboard pure white</h2>
+                        <p class="mt-2 font-16px">This pure white paperboard is very strong and therefore ideal for high-quality, premium packaging.</p>
                     </div>
 
                 </div>
@@ -424,13 +418,11 @@ export default () => {
                     <div class="col-md-6">
                         <img class="detail-img" src="https://www.saxoprint.co.uk/-/media/saxoprint/products/teaser/business-stationery/business-cards/business-cards.ashx?mh=422&mw=760&hash=F7FEF88C7AFBF6CAA0775A60E107C4DF" />
                     </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="cat-title"> 230gsm GD laminated B-flute</h2>
-                            </div>
-                        </div>
-                        <p class="mt-2">We make our mailer and shipping boxes from 230gsm GD laminated B-flute. This cardboard is coated on one side, delivers an excellent print quality, has a bright white colour and is strong and flexible.</p>
+                    <div class="col-md-6 myTextCenter">
+
+                        <h2 class="cat-title"> 230gsm GD laminated B-flute</h2>
+
+                        <p class="mt-2 font-16px">We make our mailer and shipping boxes from 230gsm GD laminated B-flute. This cardboard is coated on one side, delivers an excellent print quality, has a bright white colour and is strong and flexible.</p>
                     </div>
                 </div>
 
@@ -449,13 +441,11 @@ export default () => {
                     <div class="col-md-6">
                         <img class="detail-img" src="https://www.saxoprint.co.uk/-/media/saxoprint/products/details/finishing/dispersion-varnish.ashx?mh=422&mw=760&hash=649D0B54BE2F9AD5DA0B335DF1D20955" />
                     </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="cat-title">Dispersion Varnish</h2>
-                            </div>
-                        </div>
-                        <p class="mt-2">For print runs of 100 units and above, we provide your packaging with a dispersion varnish. This protects the surface and ensures a high-quality print. Please note: the surface will no longer be writable or stampable due to the dispersion varnish.</p>
+                    <div class="col-md-6 myTextCenter">
+
+                        <h2 class="cat-title">Dispersion Varnish</h2>
+
+                        <p class="mt-2 font-16px">For print runs of 100 units and above, we provide your packaging with a dispersion varnish. This protects the surface and ensures a high-quality print. Please note: the surface will no longer be writable or stampable due to the dispersion varnish.</p>
                     </div>
 
                 </div>
@@ -466,13 +456,11 @@ export default () => {
             <div class="container">
                 <hr></hr>
                 <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="cat-title">Spot 3D UV Coating</h2>
-                            </div>
-                        </div>
-                        <p class="mt-2">Enhance selected details of your packaging design with spot 3D UV coating. The glossy and slightly raised appearance of spot UV coating gives the packaging a sense of elegance and feels pleasant to the touch. This finishing option is available for GC1 chromo board white and GZ1 chromium sulphate cardboard pure white.</p>
+                    <div class="col-md-6 myTextCenter">
+
+                        <h2 class="cat-title">Spot 3D UV Coating</h2>
+
+                        <p class="mt-2 font-16px">Enhance selected details of your packaging design with spot 3D UV coating. The glossy and slightly raised appearance of spot UV coating gives the packaging a sense of elegance and feels pleasant to the touch. This finishing option is available for GC1 chromo board white and GZ1 chromium sulphate cardboard pure white.</p>
                     </div>
 
                     <div class="col-md-6">
@@ -486,13 +474,11 @@ export default () => {
             <div class="container">
                 <hr></hr>
                 <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="cat-title">Metallic Foil Blocking</h2>
-                            </div>
-                        </div>
-                        <p class="mt-2">With metallic foil blocking - available in gold or silver on GC1 chromo board white or GZ1 chromium sulphate cardboard pure white - a metallic foil is applied to certain details of the printed surface. The shiny, slightly raised appearance gives the packaging a luxurious touch.</p>
+                    <div class="col-md-6 myTextCenter">
+
+                        <h2 class="cat-title">Metallic Foil Blocking</h2>
+
+                        <p class="mt-2 font-16px">With metallic foil blocking - available in gold or silver on GC1 chromo board white or GZ1 chromium sulphate cardboard pure white - a metallic foil is applied to certain details of the printed surface. The shiny, slightly raised appearance gives the packaging a luxurious touch.</p>
                     </div>
 
                     <div class="col-md-6">
@@ -509,14 +495,12 @@ export default () => {
                         <div class="col-md-6">
                             <img class="detail-img" src="https://www.saxoprint.co.uk/-/media/saxoprint/products/special-box/samples/packaging-sample-set.ashx?mh=470&mw=845&hash=029AC2BB90D9E79626F022E9A2F400C8" />
                         </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h2 class="cat-title">Packaging Sample Set</h2>
-                                </div>
-                            </div>
-                            <p class="mt-2">Whether you choose the neutral or SAXOPRINT design, the packaging sample set contains all material and finishing samples, giving you a good overview of the stability and printing quality of our packaging.</p>
-                            <p>If you order a sample set in the SAXOPRINT design, we will send you a voucher to the value of £11.00 (net plus VAT) for your next order.</p>
+                        <div class="col-md-6 myTextCenter">
+
+                            <h2 class="cat-title">Packaging Sample Set</h2>
+
+                            <p class="mt-2 font-16px">Whether you choose the neutral or SAXOPRINT design, the packaging sample set contains all material and finishing samples, giving you a good overview of the stability and printing quality of our packaging.</p>
+                            <p className=" font-16px">If you order a sample set in the SAXOPRINT design, we will send you a voucher to the value of £11.00 (net plus VAT) for your next order.</p>
                         </div>
 
 
@@ -530,12 +514,10 @@ export default () => {
             <div class="container">
                 <hr></hr>
                 <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="cat-title">Try it now for £19.90: No Strings attached*</h2>
-                            </div>
-                        </div>
+                    <div class="col-md-6 font-16px myTextCenter">
+
+                        <h2 class="cat-title">Try it now for £19.90: No Strings attached*</h2>
+
                         <p class="mt-2">No matter what you're looking for, SAXOPRINT has the right packaging for your product. And the best thing is: you can order test packaging in your own design for only £19.90.</p>
                         <p class="mt-2">
                             This means you can be certain that the measurements are correct and your product is displayed at its best. Let yourself be convinced by the level of print and material quality. Once you have made your order, you will receive a voucher code worth £19.90 for your next packaging order.
@@ -577,13 +559,11 @@ export default () => {
                     <div class="col-md-6">
                         <img class="detail-img" src="https://www.saxoprint.co.uk/-/media/saxoprint/products/details/content/online-designer/online-designer.ashx?mh=422&mw=760&hash=8BC5450768C785492ADD8C29ADF8457F" />
                     </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="cat-title">Create your custom design online</h2>
-                            </div>
-                        </div>
-                        <p class="mt-2">With SAXOPRINT® easy box, no one needs to forego high-quality packaging design. Our Online Designer gives you all the tools you need to effortlessly design your own packaging that matches your corporate design and attracts public attention.</p>
+                    <div class="col-md-6 myTextCenter">
+
+                        <h2 class="cat-title">Create your custom design online</h2>
+
+                        <p class="mt-2 font-16px">With SAXOPRINT® easy box, no one needs to forego high-quality packaging design. Our Online Designer gives you all the tools you need to effortlessly design your own packaging that matches your corporate design and attracts public attention.</p>
                     </div>
                 </div>
             </div>
@@ -614,14 +594,14 @@ export default () => {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8 offset-md-2">
+                    <div class="col-md-8 offset-md-2 font-16px">
                         <p>Packaging is much more than just protective covering for shipments; it functions as space-saving storage and as an efficient transport solution, as well as having a role in increasing sales. Companies use packaging as a targeted advertising medium to communicate their publicity messages and the benefits of their product with the aim of influencing customer decisions in the retail sector. As such, packaging design, size and shape have a direct influence on product sales and revenue.</p>
                         <h6>Why do products need product packaging?</h6>
                         <p>Attractive product packaging, adapted to the target group, creates a link between products, brands, and potential buyers. It catches people’s attention and stimulates demand, provides information about the product and makes consumers want to buy it. Custom-made product packaging is therefore particularly suitable in the following cases:</p>
 
                         <div class="row">
                             <div class="col-md-6">
-                                <ul class="circle-ul">
+                                <ul class="circle-ul font-16px">
                                     <li>A range of high-quality and tear-resistant materials to choose from, including 350gsm GC chromo board</li>
                                     <li>Easy folds which end customers will be familiar with</li>
                                     <li>Space-saving storage due to flat-pack shipping</li>
@@ -629,7 +609,7 @@ export default () => {
                                 </ul>
                             </div>
                             <div class="col-md-6">
-                                <ul class="circle-ul">
+                                <ul class="circle-ul font-16px">
                                     <li>Standard measurements or bespoke sizes available</li>
                                     <li>Available in quantities of 1 and above, with money-saving special offers for larger orders</li>
                                     <li>Suitable for resale</li>

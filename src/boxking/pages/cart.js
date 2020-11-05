@@ -193,7 +193,7 @@ export default () => {
                                             </div>
                                             <div className="container">
                                                 <div className="row">
-                                                    <div className="col-sm-12 font-16px d-flex justify-content-between">
+                                                    <div className="col-sm-12 font-16px text-center">
                                                         <Form.Check
                                                             style={{ padding: 10 }}
                                                             onClick={() => handleShipping(0)}

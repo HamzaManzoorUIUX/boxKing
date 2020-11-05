@@ -46,12 +46,16 @@ height: 60px !important;
     margin-top: 30px;
     margin-bottom: 30px;
 }
-.font-16px{
-    font-size: 16px !important;
-}
 .font-12px{
     font-size: 12px !important;
 }
+.font-13px{
+    font-size: 13px !important;
+}
+.font-16px{
+    font-size: 16px !important;
+}
+
 .font-18px{font-size: 18px !important;}
 .font-20px{font-size: 20px !important;}
 .font-21px{font-size: 21px !important;}
@@ -139,6 +143,34 @@ display: none;
 .navLinkMinWidth{
     min-width: 125px;
 }
+
+/* user area */
+.mtd-2s a{
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+}
+.sc-hKFyIo p{
+margin-bottom: 0px;
+}
+.sc-hKFyIo{
+    text-align: center;
+}
+.gcXkZv{
+justify-content: center;
+align-items: center;
+}
+.DashoardIcon{
+    display: inline-block;
+    margin-right: 20px;
+    height: 20px;
+    width: 20px;
+}
+.DashoardIcon>img{
+    width: 19px;
+}
+.DashoardIcon>img.doller{
+    width: 13px;
+}
 @media(max-width:767px){
     #myCarousel .carousel-item h4{
         font-size: 25px !important;
@@ -151,3 +183,67 @@ display: none;
     #myCarousel .carousel-item h4{
         font-size: 25px !important;
     }}
+/* dashbord card design */
+  /*User Dashboard*/
+  .card-counter{
+    box-shadow: 2px 2px 10px #DADADA;
+    
+    padding: 20px 10px;
+    background-color: #fff;
+    height: 100px;
+    border-radius: 5px;
+    transition: .3s linear all;
+  }
+
+  .card-counter:hover{
+    box-shadow: 4px 4px 20px #DADADA;
+    transition: .3s linear all;
+  }
+
+  .card-counter.primary{
+    background-color: #007bff;
+    color: #FFF;
+  }
+
+  .card-counter.danger{
+    background-color: #5c6bc0;
+    color: #FFF;
+  }  
+
+  .card-counter.success{
+    background-color: #27a69b;
+    color: #FFF;
+  }  
+
+  .card-counter.info{
+    background-color: #42a5f6;
+    color: #FFF;
+  }  
+
+  .card-counter i{
+    font-size: 3em;
+    opacity: 0.5;
+    color: #e7e7ec !important;
+  }
+
+  .card-counter .count-numbers{
+    position: absolute;
+    right: 35px;
+    top: 30px;
+    font-size: 16px;
+    display: block;
+    font-weight: bold;
+    color: white !important;
+  }
+
+  .card-counter .count-name{
+    position: absolute;
+    right: 35px;
+    top: 60px;
+    font-weight: bold;
+    color: white !important;
+    text-transform: capitalize;
+    opacity: 0.5;
+    display: block;
+    font-size: 14px;
+  }

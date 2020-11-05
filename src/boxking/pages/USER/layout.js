@@ -24,9 +24,10 @@ export default (props) => {
                 <div className="col-md-3">
                     <div className="card ">
                         <div className="printingavtr">
-                            <img style={{ width: 111, height: 111, marginTop: 12 }} src="https://image.freepik.com/free-vector/man-avatar-profile-round-icon_24640-14044.jpg" />
+                            <img style={{ width: 111, height: 111, marginTop: 22, marginBottom: 13
+                             }} src="https://image.freepik.com/free-vector/man-avatar-profile-round-icon_24640-14044.jpg" />
                             <h2 className="printingTitle" style={{ marginTop: 13 }}>{user ? user.name : ""}</h2>
-                            <h2 className="printingTitleSub" style={{ marginTop: -10 }}>{user ? user.email : ""}</h2>
+                            <h2 className="printingTitleSub font-13px">{user ? user.email : ""}</h2>
                         </div>
 
                         <div className="printingTitleMenu">
@@ -34,39 +35,15 @@ export default (props) => {
                             <div></div>
                         </div>
                         <div className="mt-3 mtd-2s">
-                            <Link to='/user' style={{color: '#707070'}}><span><img src={require('../../images/panel/1.png')} style={{
-                                width: 19, marginTop: -3,
-                                marginLeft: 10,
-                                marginRight: 7
-                            }} /></span> Dashboard</Link>
-                            <Link to='/user/orders/recent' style={{color: '#707070'}}><span><img src={require('../../images/panel/2.png')} style={{
-                                width: 19, marginTop: -3,
-                                marginLeft: 10,
-                                marginRight: 7
-                            }} /></span>Recent Orders</Link>
-                            <Link to='/user/orders' style={{color: '#707070'}}><span><img src={require('../../images/panel/3.png')} style={{
-                                width: 19, marginTop: -3,
-                                marginLeft: 10,
-                                marginRight: 7
-                            }} /></span>All Orders</Link>
-                            <Link to='/user/payment' style={{color: '#707070'}}><span><img src={require('../../images/panel/5.png')} style={{
-                                width: 13, marginTop: -3,
-                                marginLeft: 10,
-                                marginRight: 7
-                            }} /></span>My Payments</Link>
-                            <Link to='/user/settings' style={{color: '#707070'}}><span><img src={require('../../images/panel/6.png')} style={{
-                                width: 19, marginTop: -3,
-                                marginLeft: 12,
-                                marginRight: 10
-                            }} /></span>Settings</Link>
+                            <Link to='/user' style={{color: '#707070'}}><span className="DashoardIcon"><img src={require('../../images/panel/1.png')} /></span>Dashboard</Link>
+                            <Link to='/user/orders/recent' style={{color: '#707070'}}><span className="DashoardIcon"><img src={require('../../images/panel/2.png')}  /></span>Recent Orders</Link>
+                            <Link to='/user/orders' style={{color: '#707070'}}><span className="DashoardIcon"><img src={require('../../images/panel/3.png')} /></span>All Orders</Link>
+                            <Link to='/user/payment' style={{color: '#707070'}}><span className="DashoardIcon"><img className="doller" src={require('../../images/panel/5.png')}  /></span>My Payments</Link>
+                            <Link to='/user/settings' style={{color: '#707070'}}><span className="DashoardIcon"><img src={require('../../images/panel/6.png')} /></span>Settings</Link>
                             <Link  onClick={()=>{
                                  dispatch({type:actionMethodes.logOut,payload:{}});
                                  history.replace('/')
-                            }} style={{color: '#707070',marginBottom:30}}><span><img src={require('../../images/panel/7.png')} style={{
-                                width: 19, marginTop: -3,
-                                marginLeft: 10,
-                                marginRight: 7
-                            }} /></span>Logout</Link>
+                            }} style={{color: '#707070',marginBottom:30}}><span className="DashoardIcon"><img src={require('../../images/panel/7.png')}/></span>Logout</Link>
 
                         </div>
                     </div>

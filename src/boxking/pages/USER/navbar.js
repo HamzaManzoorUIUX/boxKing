@@ -82,7 +82,7 @@ export default () => {
           <Nav.Link as={Link} to="/" >Home</Nav.Link>
           <Nav.Link as={Link} to="/categories"  >Categories</Nav.Link>
           <Nav.Link as={Link} to="/Howitwork" className="navbrr-tt" >How it Works</Nav.Link>
-          <Nav.Link as={Link} to="/categories" className="navbrr-tt" >Find a Designer</Nav.Link>
+          <Nav.Link as={Link} to="/categories" className="navbrr-tt navLinkMinWidth" >Find a Designer</Nav.Link>
 
 
 

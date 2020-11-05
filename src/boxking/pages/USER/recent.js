@@ -90,7 +90,7 @@ export default () => {
             if(row.order_items.length>0)
             {
                 return <div className="prdDispOrdr mt-5">
-                <img style={{width:50,height:50}} src={urlImg+"dist/img/upload/"+row.order_items[0].product.image}/>
+                <img style={{width:50,height:50}} src={urlImg+"system/public/dist/img/upload/"+row.order_items[0].product.image}/>
                 <div><h3>{row.order_items[0].product.title}</h3>
                 <p>{row.order_items[0].product.shortdescription}</p>
                 </div>

@@ -136,6 +136,9 @@ display: none;
     float: none;
     top: 7px;
 }
+.navLinkMinWidth{
+    min-width: 125px;
+}
 @media(max-width:767px){
     #myCarousel .carousel-item h4{
         font-size: 25px !important;

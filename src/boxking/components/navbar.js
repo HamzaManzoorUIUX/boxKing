@@ -82,7 +82,7 @@ export default () => {
           <Nav.Link as={Link} to="/" >Home</Nav.Link>
           <Nav.Link as={Link} to="/categories"  >Categories</Nav.Link>
           <Nav.Link as={Link} to="/Howitwork" className="navbrr-tt" >How it Works</Nav.Link>
-          <Nav.Link as={Link} to="/categories" className="navbrr-tt" >Find a Designer</Nav.Link>
+          <Nav.Link as={Link} to="/categories" className="navbrr-tt navLinkMinWidth" >Find a Designer</Nav.Link>
           {
             /* 
                   <Nav.Link as={Link} to="/cart" >Cart</Nav.Link>
@@ -114,7 +114,7 @@ export default () => {
           {
             authUrl1()
           }
-          <a class="" href="#" style={{ color: 'black', fontSize: '1.3rem', margin: 1, padding: 6.4 }}><FaRegHeart /><span class="badge badge-default nav-badges">3</span> </a>
+          {/* <a class="" href="#" style={{ color: 'black', fontSize: '1.3rem', margin: 1, padding: 6.4 }}><FaRegHeart /><span class="badge badge-default nav-badges">3</span> </a> */}
           
           <a onClick={() => setShowCart(!showCart)} style={{ color: 'black', fontSize: '1.3rem', margin: 1, padding: 6.4 }}><HiOutlineShoppingBag /><span class={getCartLenth() != null ? "badge badge-default nav-badges" : "displsrye"}>   {
             getCartLenth()

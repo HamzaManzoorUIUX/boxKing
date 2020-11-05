@@ -7,6 +7,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import actionMethodes from '../../../redux/actionMethodes/cartActionsTypes';
 import { useHistory } from 'react-router-dom';
 import ClipLoader from "react-spinners/PulseLoader";
+import {Link} from 'react-router-dom'
 import { css } from "@emotion/core";
 const override = css`
   display: block;

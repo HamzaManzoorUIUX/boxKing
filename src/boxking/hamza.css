@@ -175,7 +175,7 @@ align-items: center;
     position: relative;
     height: 46px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     background-color: white !important;
 }

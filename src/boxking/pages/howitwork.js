@@ -31,7 +31,7 @@ export default ()=>{
         <section className="we-offer-area mt-5">
             <div className="container"><br/><br/>
                 <div className="row mb-5 mt-4">
-                    <div className="col-md-4 mb-3 col-12">
+                    <div className="col-md-4 my-3 col-12">
                         <div className="card how-card">
                             <div className="card-body">
                                 <h4 className="mb-3 mbsdf3h234o">Book Online</h4>
@@ -42,7 +42,7 @@ export default ()=>{
                       </div>
                     </div>
 
-                    <div className="col-md-4 mb-3 col-12">
+                    <div className="col-md-4 my-3 col-12">
                         <div className="card how-card">
                             <div className="card-body">
                                 <h4 className="mb-3 mbsdf3h234o">Get Confirmation</h4>
@@ -53,7 +53,7 @@ export default ()=>{
                       </div>
                     </div>
 
-                    <div className="col-md-4 mb-3 col-12">
+                    <div className="col-md-4 my-3 col-12">
                         <div className="card how-card">
                             <div className="card-body">
                                 <h4 className="mb-3 mbsdf3h234o">Let’s Enjoy</h4>
@@ -64,7 +64,7 @@ export default ()=>{
                       </div>
                     </div>
 
-                    <div className="col-md-4 mb-3 col-12">
+                    <div className="col-md-4 my-3 col-12">
                         <div className="card how-card">
                             <div className="card-body">
                                 <h4 className="mb-3 mbsdf3h234o">Book Online</h4>
@@ -75,7 +75,7 @@ export default ()=>{
                       </div>
                     </div>
 
-                    <div className="col-md-4 mb-3 col-12">
+                    <div className="col-md-4 my-3 col-12">
                         <div className="card how-card">
                             <div className="card-body">
                                 <h4 className="mb-3 mbsdf3h234o">Get Confirmation</h4>
@@ -86,7 +86,7 @@ export default ()=>{
                       </div>
                     </div>
 
-                    <div className="col-md-4 mb-3 col-12">
+                    <div className="col-md-4 my-3 col-12">
                         <div className="card how-card">
                             <div className="card-body">
                                 <h4 className="mb-3 mbsdf3h234o">Let’s Enjoy</h4>

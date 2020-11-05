@@ -100,15 +100,15 @@ export default () => {
                                             {
                                                 cart.items.map(x => <div className="container mt-3">
                                                     <div className="row justify-content-center align-items-center">
-                                                        <div className="col-md-2">
-                                                            <img className="cart-box ml-4 mt-0" style={{ width: '100%' }} src={x.printimage} alt="" />
+                                                        <div className="col-md-2 text-center">
+                                                            <img className="cart-box ml-4 mt-0" style={{width:'80%' }} src={x.printimage} alt="" />
                                                         </div>
                                                         <div className="col-md-4">
                                                             <h4 className="tag mb-0 font-16px">{x.product} <span
                                                                 className="tag custom-tag">{x.nonCustomize ? "(Customized)" : ""}</span></h4>
                                                             <p className="brochures__des font-12px">{x.description ? x.description : 'Perfect binding135 and 250g/m<sup>2</sup> art paper 96 pages with cover'}</p>
                                                         </div>
-                                                        <div className="col-md-3">
+                                                        <div className="col-md-2">
                                                             <div className="ml-5 mt-1 center">
                                                                 <div className="input-group">
                                                                     <button className="dec__btn" onClick={() => {
@@ -128,11 +128,11 @@ export default () => {
                                                             </div>
                                                         </div>
 
-                                                        <div className="col-md-1">
-                                                            <h4 className="mt-3 mb-3 tag pl-4 ml-2">${parseFloat(x.purchaseAmount * x.quantity).toFixed(2)}</h4>
+                                                        <div className="col-md-2">
+                                                            <h4 className="mt-3 mb-3 tag">${parseFloat(x.purchaseAmount * x.quantity).toFixed(2)}</h4>
                                                         </div>
                                                         <div className="col-md-2">
-                                                            <button type="button" className=" btn btn-outline-prm btn-block waves-effect" onClick={() => {
+                                                            <button type="button" className=" btn btn-outline-prm btn-block waves-effect seHeight" onClick={() => {
                                                                 history.push('/summry', { obj: x });
 
                                                             }} >View Summry</button>
@@ -168,12 +168,12 @@ export default () => {
                                                         <h4 className="mb-3 tag pl-3 font-16px">Total VAT</h4>
                                                     </div>
                                                     <div className="col-sm-4">
-                                                        <h4 className="mb-3 tag pl-4 ml-2 font-16px">{cart.printiingCompany.CompanyName}&nbsp;</h4>
+                                                        <h4 className="mb-3 tag  ml-2 font-16px">{cart.printiingCompany.CompanyName}&nbsp;</h4>
 
-                                                        <h4 className="mb-3 tag pl-4 ml-2 font-16px">${parseFloat(cart.total).toFixed(2)}</h4>
-                                                        <h4 className="mb-3 tag pl-4 ml-2 font-16px">${parseFloat(cart.extraAmount).toFixed(2)}</h4>
-                                                        <h4 className="mb-3 tag pl-4 ml-2 font-16px">${parseFloat(cart.deliveryCharges).toFixed(2)}</h4>
-                                                        <h4 className="mb-3 tag pl-4 ml-2 font-16px">${0}</h4>
+                                                        <h4 className="mb-3 tag ml-2 font-16px">${parseFloat(cart.total).toFixed(2)}</h4>
+                                                        <h4 className="mb-3 tag ml-2 font-16px">${parseFloat(cart.extraAmount).toFixed(2)}</h4>
+                                                        <h4 className="mb-3 tag ml-2 font-16px">${parseFloat(cart.deliveryCharges).toFixed(2)}</h4>
+                                                        <h4 className="mb-3 tag ml-2 font-16px">${0}</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -187,13 +187,13 @@ export default () => {
                                                         <h3 className="mb-3 tag pl-3 total_tag">Sub Total</h3>
                                                     </div>
                                                     <div className="col-sm-4">
-                                                        <h3 className="mb-3 tag pl-4 ml-1 total_tag">${parseFloat(cart.subTotal).toFixed(2)}</h3>
+                                                        <h3 className="mb-3 tag ml-1 total_tag">${parseFloat(cart.subTotal).toFixed(2)}</h3>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="container">
                                                 <div className="row">
-                                                    <div className="col-sm-12 font-16px d-flex justify-content-around">
+                                                    <div className="col-sm-12 font-16px d-flex justify-content-between">
                                                         <Form.Check
                                                             style={{ padding: 10 }}
                                                             onClick={() => handleShipping(0)}

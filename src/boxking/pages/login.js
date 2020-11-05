@@ -100,7 +100,9 @@ export default () => {
 
                                 <div className="container main">
                                     <div className="main-form">
+                                        <Link to='/'>
                                         <img src={require('../images/logo.png')} alt="Logo" className="logo" />
+                                        </Link>
 
 
                                         <section className="LoginSection">

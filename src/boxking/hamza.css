@@ -279,3 +279,18 @@ align-items: center;
     display: block;
     font-size: 14px;
   }
+  .btn-outline-prm.seHeight{
+      min-height: 42px;
+      height: 100%;
+  }
+  .accordian-toggle-specs{
+      align-items: center;
+  }
+  .companyMain{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    max-width: 800px!important;
+    margin-top: 5%;
+  }

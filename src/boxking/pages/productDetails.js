@@ -297,10 +297,10 @@ export default () => {
                                                     <label class="am-label-color fntfamlyy-popins">Print run</label>
                                                 </div>
                                                 <div class="col-md-7">
-                                                    <div className="md-check-pr">
+                                                    <div className="md-check-pr px-2">
 
-                                                        <div className="assaasf33d" >
-                                                            <div className="">
+                                                        <div className=" printddhh33d assaasf33d" >
+                                                        <div className="">
                                                                 <button className="btn" onClick={() => handleQuanity('minus')} style={{ paddingTop: 0 }}>
                                                                     <FiMinus />
                                                                 </button>
@@ -309,7 +309,9 @@ export default () => {
                                                                     <FiPlus />
                                                                 </button>
                                                             </div>
-                                                        </div>
+                                                       
+                                                        
+                                                          </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -438,12 +440,12 @@ export default () => {
                                         <div class="card-header bg-white am-Product-Preview">
                                             <h5>Product Preview and Offer</h5>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body font-16px">
                                             <div class="row">
                                                 <div class="col-md-12 text-center">
 
                                                     <img src={`${urlImg}system/public/dist/img/cuttings/${(product != null ? product.uvImage : "")}`} class="two-d-img" width="100%" />
-                                                    <button class="btn btn-theme-circle"> <img src={require('../images/rotation.png')} onClick={() => setcheckOutModal1(true)} class="three-d-img" /> </button>
+                                                    <button class="btn btn-theme-circle myRotateBtn"> <img src={require('../images/rotation.png')} onClick={() => setcheckOutModal1(true)} class="three-d-img" /> </button>
                                                 </div>
                                             </div>
                                             <div class="row mt-5">
@@ -507,7 +509,7 @@ export default () => {
                                         newProduct.minimumWidth = width;
                                         newProduct.minimumHeight = height;
                                         history.push("/tool", { product: newProduct })
-                                    }}>Purchase And Design </button>
+                                    }}>Purchase &amp; Design </button>
                                 </div>
                             </div>
 
@@ -679,7 +681,7 @@ export default () => {
             }}
             message={<span id="message-id">Item Added to Cart</span>}
           />
-        <Footer />
+        <Footer className="mt-5" />
         <div >
             <Modal id="msdhsdh" onHide={() => setcheckOutModal1(false)}
                 centered show={checkOutModal1}>

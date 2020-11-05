@@ -617,7 +617,7 @@ const handleActiveIndex=(val)=>{
                         </div>
 
                         <a id="share" className="share-toggle share-icon text-themeOrange" href="#">
-                          <span className="fas fa-share-alt"></span>
+                          <span className="fas fa-share-alt text-themeOrange"></span>
                         </a>
                       </div>
 

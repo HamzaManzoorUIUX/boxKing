@@ -80,6 +80,12 @@ height: 60px !important;
 display: none;
 
 }
+.myRotateBtn{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 @media(max-width:992px){
     #myCarousel .carousel-item h4{
         font-size: 42px !important;
@@ -91,6 +97,20 @@ display: none;
     .we-offer-area.text-center .item{
         padding: 33px 20px 32px !important;
     }
+}
+
+/* product details */
+.card-header{
+    padding: .75rem 1.25rem !important;
+}
+.assaasf33d{
+    border: none;
+    background-color: transparent;
+}
+.printddhh33d{
+    border: 1px solid #E4E6EF !important; 
+    background-color: #f9f9f9 !important;
+    border-radius: 0px !important;
 }
 @media(max-width:767px){
     #myCarousel .carousel-item h4{

@@ -321,7 +321,7 @@ export default () => {
             </div>
 
        </div>
-      <section className="we-offer-area" style={{ backgroundColor: 'white' }}>
+      <section className="we-offer-area bg-white">
         <div className="container">
 
           <div className="row mt-5">

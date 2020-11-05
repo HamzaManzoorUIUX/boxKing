@@ -93,7 +93,7 @@ export default () => {
                                 <div className="row setMinHeight">
                                     <div className="col-md-8">
                                         <div className="your-cart">
-                                            <h4 className="mt-3 mb-3 tag pl-4 ml-2">Your Cart</h4>
+                                            <h4 className="mt-3 mb-3 tag pl-4 ml-2 font-20px">Your Cart</h4>
                                             <hr className="new2" />
                                             <br /><br />
 
@@ -159,7 +159,7 @@ export default () => {
                                             <br /><br />
                                             <div className="container">
                                                 <div className="row">
-                                                    <div className="col-sm-9">
+                                                    <div className="col-sm-8">
                                                         <h4 className="mb-3 tag pl-3 font-16px">Printing Company</h4>
 
                                                         <h4 className="mb-3 tag pl-3 font-16px">Total</h4>
@@ -167,7 +167,7 @@ export default () => {
                                                         <h4 className="mb-3 tag pl-3 font-16px">Delivery Charges</h4>
                                                         <h4 className="mb-3 tag pl-3 font-16px">Total VAT</h4>
                                                     </div>
-                                                    <div className="col-sm-3">
+                                                    <div className="col-sm-4">
                                                         <h4 className="mb-3 tag pl-4 ml-2 font-16px">{cart.printiingCompany.CompanyName}&nbsp;</h4>
 
                                                         <h4 className="mb-3 tag pl-4 ml-2 font-16px">${parseFloat(cart.total).toFixed(2)}</h4>
@@ -183,10 +183,10 @@ export default () => {
                                             <div className="container">
                                                 <div className="row">
 
-                                                    <div className="col-sm-9">
+                                                    <div className="col-sm-8">
                                                         <h3 className="mb-3 tag pl-3 total_tag">Sub Total</h3>
                                                     </div>
-                                                    <div className="col-sm-3">
+                                                    <div className="col-sm-4">
                                                         <h3 className="mb-3 tag pl-4 ml-1 total_tag">${parseFloat(cart.subTotal).toFixed(2)}</h3>
                                                     </div>
                                                 </div>

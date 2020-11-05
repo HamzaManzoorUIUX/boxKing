@@ -15,7 +15,7 @@ import InputRange from 'react-input-range';
 import { Accordion, Card, Button } from 'react-bootstrap'
 import { FiPlus, FiMinus } from 'react-icons/fi';
 
-export default ({quantity,selectedPrinting,handlePrintingChange,printingCompanies,selectedfinishing,handleFinishingChange,finishing,addItemTocart,selectedfinishingEffect,finishingEffect,handleFinishingEffectChange,selectedmaterial  ,handleMaterialChange ,material ,handleProcessingChange ,selectedtypeOfprocessing ,typeOfprocessing,handleQuanity,handleTextAlignhange,fontSize,setfontSize,handleFontFamily,handleFontSizeChange,setscaleSize,scaleSize, dragObj, objectColorChange, objectColor, textColorChange, textColor, backColorChange, backColor,boxDefaultColor ,boxColorChange}) => {
+export default ({handleQuanityValue,quanity,proprice,quantity,selectedPrinting,handlePrintingChange,printingCompanies,selectedfinishing,handleFinishingChange,finishing,addItemTocart,selectedfinishingEffect,finishingEffect,handleFinishingEffectChange,selectedmaterial  ,handleMaterialChange ,material ,handleProcessingChange ,selectedtypeOfprocessing ,typeOfprocessing,handleQuanity,handleTextAlignhange,fontSize,setfontSize,handleFontFamily,handleFontSizeChange,setscaleSize,scaleSize, dragObj, objectColorChange, objectColor, textColorChange, textColor, backColorChange, backColor,boxDefaultColor ,boxColorChange}) => {
   //const [defaultfontSize,setfontSize]=useState();
   const [imagesU, setImagesU] = useState([]);
   const [SVGicons,setSVGIcons]=useState([{id:1,name:'Social Circle Icons',iconFolder:'social',icons:["badoo","behance","deviantart","dribbble","facebook","flickr","google-plus","instagram","lastfm","linkedin","pinterest","soundcloud","swarm","tumblr","twitter","vk"]},{id:2,name:'Social Square Icons',iconFolder:'socialSquare',icons:["badoo","bebo","behance","blogger","deviantart","digg","disqus","dribbble","facebook","flickr","forrst","google-plus","instagram","line","linkedin","myspace","pinterest","plurk","rss","skype","telegram","tumblr","twitter","viber","vimeo","vine","vk","whatsapp","xing","youtube"]},{id:3,name:'Flags Icons',iconFolder:'flags',icons:["germany","japan","pakistan","turkey","united-arab-emirates","united-kingdom","united-nations","united-states"]}]);
@@ -92,20 +92,11 @@ export default ({quantity,selectedPrinting,handlePrintingChange,printingCompanie
                     </select>
                 </div>
                 <div className="md-check-pr md-check-h1 mt-4 pr-3">
-                    <select 
-                    // value={(selectedfinishing.id ? selectedfinishing.id : 0)}
-                        // onChange={e => handleFinishingChange(e.target.value)}
-                         className="printddhh33d form-control ">
-                        <option>Quantity</option>
-                        {/* {
-                            finishing.map(x => <option key={x.id} value={x.id}>
-                                {x.name}
-                            </option>)
-                        } */}
-                    </select>
+                    <input  value={quantity} min={1} max={999} type="number" onChange={(e)=>{handleQuanityValue(e.target.value)}} className="printddhh33d form-control"/>
+                    
                 </div>
                 <div className="md-check-pr md-check-h1 mt-4 pr-3">
-                    <input className="printddhh33d form-control"/>
+                    <input readOnly value={"$"+proprice} className="printddhh33d form-control"/>
                     
                         
 
@@ -325,7 +316,7 @@ export default ({quantity,selectedPrinting,handlePrintingChange,printingCompanie
           <p className=" colorPickhead">SVG Shapes</p>
           <Accordion defaultActiveKey="0">
           {
-            SVGicons.map(x=>  <Card>
+            SVGicons.map((x,i)=>  <Card key={i}>
               <Card.Header>
                 <Accordion.Toggle as={Button} variant="link" eventKey={x.id}>
                   {x.name}
@@ -335,7 +326,7 @@ export default ({quantity,selectedPrinting,handlePrintingChange,printingCompanie
                 <Card.Body>
                   <div style={{display:'flex',flexWrap:'wrap'}}>
                   {
-                    x.icons.map(y=>   <img onDragStart={e => {
+                    x.icons.map((y,i)=>   <img key={i} onDragStart={e => {
                       dragObj.current = { type: 'svg', src:require('../images/svg/'+x.iconFolder+"/"+y+".svg") };
         
                     }} src={require('../images/svg/'+x.iconFolder+"/"+y+".svg")} style={{ width: 50, height: 50,margin:5 }} />)

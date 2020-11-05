@@ -7,7 +7,7 @@ import InputRange from 'react-input-range';
 import 'react-input-range/lib/css/index.css';
 import MainTool from './mainTool';
 import EditorBar from '../components/tool/editorBar';
-import { Stage, Layer, Group, Text, Rect, Arrow, Star, Circle, Shape, TextPath, Label, Tag } from "react-konva";
+import { Stage, Layer, Group, Text, Rect, Arrow, Star, Circle, Shape, TextPath, Label, Tag ,Line} from "react-konva";
 import Image from '../components/tool/UriImage';
 import newId from '../utils/newId';
 import ThreeD from '../components/babylonjs/models';
@@ -27,27 +27,28 @@ let historyStep;
 let historyPanObj = [];
 let currentSelectedIndex;
 let textEnb = false;
+let startPoint = { x: 0, y: 0 }
 
 
 
 export default () => {
 
     const location = useLocation();
-
-
     const textAreaRef = useRef(null);
     //const selectedNodeRef = useRef(null);
-
+    const [brushSize, setbrushSize] = useState(5);
     const [mainProduct, setMainProduct] = useState();
     const history = useHistory();
     const stageRef = React.useRef();
     const layerRef = React.useRef();
-
+    const [isToolactive, setisToolactive] = React.useState(false);
+    const [tool, setTool] = React.useState('eraser');
+    const [grid,Setgrid]=React.useState(true);
     const textRef = React.useRef();
 
     const fontsizeRef = React.useRef();
     const fontfamilyRef = React.useRef();
-
+const [proprice,setproprice]=React.useState(location.state.product?location.state.product.unitCost:0)
 
     const [stageSize, setStageSize] = useState({ width: 570 - 20, height: 470 - 20 });
     const [rangeValue, setRangeValue] = useState(0);
@@ -57,7 +58,12 @@ export default () => {
     const dragObject = React.useRef();
     const [selectedShapeName, setSelectedShape] = useState("");
     //objects and Images
-    const [panObject, SetPanObject] = useState([]);
+    const [panObject, SetPanObject] = useState([{
+        type: 'line',
+        name: newId(), lines: []
+    }]);
+    const isDrawing = React.useRef(false);
+
     const [objecDefaultColor, setobjecDefaultColor] = useState("#22194D");
     const [textDefaultColor, settextDefaultColor] = useState("#22194D");
     const [backDefaultColor, setbackDefaultColor] = useState("transparent");
@@ -191,13 +197,18 @@ export default () => {
     const handleFinishingChange = (value) => {
         let foundValue = finishing.find(x => x.id == value);
         if (foundValue) {
+           {
             setSelectedfinishing(foundValue);
+           }
         }
     }
     const handleFinishingEffectChange = (value) => {
+        
         let foundValue = finishingEffect.find(x => x.id == value);
         if (foundValue) {
             setSelectedfinishingEffect(foundValue);
+         
+           setproprice(parseFloat(proprice)+parseFloat(foundValue.extraamount?foundValue.extraamount:0)*quantity);
         }
     }
     const handleMaterialChange = (value) => {
@@ -430,16 +441,28 @@ console.log(panObject)
     const handleQuanity = (value) => {
         switch (value) {
             case "plus": {
-                setquantity(quantity + 1);
+                setproprice((parseFloat(location.state.product?location.state.product.unitCost:0)+parseFloat(selectedfinishingEffect.extraamount?selectedfinishingEffect.extraamount:0))*(parseInt(quantity) + 1));
+                setquantity(parseInt(quantity) + 1);
                 break;
             }
             case "minus": {
-                if (quantity > 1) {
-                    setquantity(quantity - 1);
+                if (parseInt(quantity) > 1) {
+                    setproprice((parseFloat(location.state.product?location.state.product.unitCost:0)+parseFloat(selectedfinishingEffect.extraamount?selectedfinishingEffect.extraamount:0))*(parseInt(quantity) - 1));
+
+                    setquantity(parseInt(quantity) - 1);
                 }
                 break;
             }
         }
+    }
+
+    const handleQuanityValue = (value) => {
+        console.log(value)
+       if(value!==0 || value!="" || value!="0")
+       {
+        setproprice((parseFloat(location.state.product?location.state.product.unitCost:0)+parseFloat(selectedfinishingEffect.extraamount?selectedfinishingEffect.extraamount:0))*(value));
+        setquantity(value);
+       }
     }
 
 
@@ -645,36 +668,72 @@ console.log(panObject)
         <h1 ref={ref}>Child Component</h1>
     ));
 
-
     const handleStageMouseDown = e => {
 
-        //all objects un selected
-        if (e.target === e.target.getStage()) {
 
-            setSelectedShape("");
 
+        if (isToolactive) {
+            isDrawing.current = true;
+            const pos = e.target.getStage().getPointerPosition();
+            panObject[0].lines = [...panObject[0].lines, { tool, points: [pos.x, pos.y], brushSize }];
+            const stringF = JSON.stringify(panObject);
+            SetPanObject(JSON.parse(stringF));
+            updateHistory(JSON.parse(stringF));
+            startPoint.x = pos.x;
+            startPoint.y = pos.y;
+        }
+        else {
+            //all objects un selected
+            if (e.target === e.target.getStage()) {
+
+                setSelectedShape("");
+
+                return;
+            }
+
+
+
+            // clicked on transformer - do nothing
+            const clickedOnTransformer =
+                e.target.getParent().className === "Transformer";
+            if (clickedOnTransformer) {
+                return;
+            }
+
+            // find clicked rect by its name
+            const name = e.target.name();
+            // const rect = this.state.rectangles.find(r => r.name === name);
+            if (name) {
+                setSelectedShape(name);
+            } else {
+                setSelectedShape("");
+            }
+        }
+
+    }
+
+    const handleMouseMove = (e) => {
+        // no drawing - skipping
+        if (!isDrawing.current) {
             return;
         }
+        const stage = e.target.getStage();
+        const point = stage.getPointerPosition();
+        let lastLine = panObject[0].lines[panObject[0].lines.length - 1];
+        // add point
+        lastLine.points = lastLine.points.concat([point.x, point.y]);
+        lastLine.brushSize = brushSize;
+        // replace last
+        panObject[0].lines.splice(panObject[0].lines.length - 1, 1, lastLine);
+        const stringF = JSON.stringify(panObject);
+        SetPanObject(JSON.parse(stringF));
+        updateHistory(JSON.parse(stringF));
 
-
-
-        // clicked on transformer - do nothing
-        const clickedOnTransformer =
-            e.target.getParent().className === "Transformer";
-        if (clickedOnTransformer) {
-            return;
-        }
-
-        // find clicked rect by its name
-        const name = e.target.name();
-        // const rect = this.state.rectangles.find(r => r.name === name);
-        if (name) {
-            setSelectedShape(name);
-        } else {
-            setSelectedShape("");
-        }
     };
 
+    const handleMouseUp = () => {
+        isDrawing.current = false;
+    };
 
     const getPanObject = (obj) => {
         if (obj) {
@@ -823,49 +882,53 @@ console.log(panObject)
 
 
         if (historyStep != undefined) {
-            if (historyStep == 0) {
-                const oldPanhistoryObj = historyPanObj[historyStep];
-                SetPanObject([]);
-
-                historyStep = undefined;
+          if (historyStep == 0) {
+            const oldPanhistoryObj = historyPanObj[historyStep];
+            SetPanObject([{
+              type: 'line',
+              name: newId(), lines: []
+            }]);
+    
+            historyStep = undefined;
+          }
+          else {
+            historyStep -= 1;
+            const oldPanhistoryObj = historyPanObj[historyStep];
+            if (oldPanhistoryObj) {
+              SetPanObject(oldPanhistoryObj);
+    
+    
             }
             else {
-                historyStep -= 1;
-                const oldPanhistoryObj = historyPanObj[historyStep];
-                if (oldPanhistoryObj) {
-                    SetPanObject(oldPanhistoryObj);
-
-
-                }
-                else {
-                    historyStep += 1;
-                }
+              historyStep += 1;
             }
+          }
         }
-    }
-    const handleRedo = () => {
-
+      }
+      const handleRedo = () => {
+    
         if (historyStep != undefined) {
-            historyStep += 1;
-            const hstObj = historyPanObj[historyStep];
-            if (hstObj) {
-                SetPanObject(hstObj);
-            }
-            else {
-                historyStep -= 1;
-            }
-
-
+          historyStep += 1;
+          const hstObj = historyPanObj[historyStep];
+          if (hstObj) {
+            SetPanObject(hstObj);
+          }
+          else {
+            historyStep -= 1;
+          }
+    
+    
         }
         else {
-
-            const checkAvailable = historyPanObj[0];
-            if (checkAvailable) {
-                historyStep = 0;
-                SetPanObject(historyPanObj[historyStep]);
-            }
+    
+          const checkAvailable = historyPanObj[0];
+          if (checkAvailable) {
+            historyStep = 0;
+            SetPanObject(historyPanObj[historyStep]);
+          }
         }
-    }
+      }
+    
 
     const handleDragEnd = (e) => {
 
@@ -892,13 +955,13 @@ console.log(panObject)
                 cursor: 'pointer'
             }} src={require('../images/logo.png')} />
         </div>
-        <EditorBar handleCopyLeft={handleCopyLeft} handleCopyRight={handleCopyRight} handleDelete={handleDelete} handleDragControl={handleDragControl} handleUndo={handleUndo} handleRedo={handleRedo} />
+        <EditorBar Setgrid={Setgrid} grid={grid} isToolactive={isToolactive} setisToolactive={setisToolactive} handleCopyLeft={handleCopyLeft} handleCopyRight={handleCopyRight} handleDelete={handleDelete} handleDragControl={handleDragControl} handleUndo={handleUndo} handleRedo={handleRedo} />
 
         <div className="row mt-5">
             <div className="col-md-4">
                 <div style={{ marginLeft: '10%' }}>
-                    <MainTool selectedPrinting={selectedPrinting} addItemTocart={addItemTocart} quantity={quantity} handlePrintingChange={handlePrintingChange} printingCompanies={printingCompanies} selectedfinishing={selectedfinishing} handleFinishingChange={handleFinishingChange} finishing={finishing} selectedfinishingEffect={selectedfinishingEffect} finishingEffect={finishingEffect} handleFinishingEffectChange={handleFinishingEffectChange}
-                        selectedmaterial={selectedmaterial} handleQuanity={handleQuanity} handleMaterialChange={handleMaterialChange} material={material} handleProcessingChange={handleProcessingChange} selectedtypeOfprocessing={selectedtypeOfprocessing} typeOfprocessing={typeOfprocessing} handleTextAlignhange={handleTextAlignhange} setfontSize={setfontSize} fontSize={fontSize} handleFontSizeChange={handleFontSizeChange} handleFontFamily={handleFontFamily} dragObj={dragObject} scaleSize={scaleSize} setscaleSize={setscaleSize} boxColorChange={handleBoxColor} boxDefaultColor={boxDefaultColor} textColorChange={handleTextColor} backColor={backDefaultColor} backColorChange={handleBackColor} textColor={textDefaultColor} objectColorChange={handleObjectColorCange} objectColor={objecDefaultColor} />
+                    <MainTool proprice={proprice} setproprice={setproprice}  selectedPrinting={selectedPrinting} addItemTocart={addItemTocart} quantity={quantity} handlePrintingChange={handlePrintingChange} printingCompanies={printingCompanies} selectedfinishing={selectedfinishing} handleFinishingChange={handleFinishingChange} finishing={finishing} selectedfinishingEffect={selectedfinishingEffect} finishingEffect={finishingEffect} handleFinishingEffectChange={handleFinishingEffectChange}
+                        selectedmaterial={selectedmaterial} handleQuanityValue={handleQuanityValue} quantity={quantity} handleQuanity={handleQuanity} handleMaterialChange={handleMaterialChange} material={material} handleProcessingChange={handleProcessingChange} selectedtypeOfprocessing={selectedtypeOfprocessing} typeOfprocessing={typeOfprocessing} handleTextAlignhange={handleTextAlignhange} setfontSize={setfontSize} fontSize={fontSize} handleFontSizeChange={handleFontSizeChange} handleFontFamily={handleFontFamily} dragObj={dragObject} scaleSize={scaleSize} setscaleSize={setscaleSize} boxColorChange={handleBoxColor} boxDefaultColor={boxDefaultColor} textColorChange={handleTextColor} backColor={backDefaultColor} backColorChange={handleBackColor} textColor={textDefaultColor} objectColorChange={handleObjectColorCange} objectColor={objecDefaultColor} />
                 </div>
 
             </div>
@@ -1070,18 +1133,21 @@ console.log(panObject)
                                 style={{ backgroundColor: '#d6d6d6' }}>
                                 <Scrollbars
                                     style={{ width: 608, height: 505 }}>
-                                    <div className="canvas-line12312s">
+                                    <div className="canvas-line12312s" style={{display:grid?"":"none"}}>
                                         <p className="sdasd3-3423ds">124mm</p>
                                     </div>
-                                    <div className="canvas-line12312s1">
+                                    <div className="canvas-line12312s1"style={{display:grid?"":"none"}}>
                                         <p className="sdasd3-3423ds1">124mm</p>
                                     </div>
-                                    <Stage width={stageSize.width}
+                                    <Stage 
+                                    className={isToolactive?"cslsry3-5sru":""}
+                                    width={stageSize.width}
                                         height={stageSize.height}
                                         style={{ marginLeft: 32 }}
                                         ref={stageRef}
                                         onMouseDown={handleStageMouseDown}
-                                    >
+                                        onMousemove={handleMouseMove}
+                                        onMouseup={handleMouseUp}                                    >
                                         <Layer style={{ position: 'absolute', zIndex: -100 }}>
 
                                             <Rect width={stageSize.width} height={stageSize.height}
@@ -1104,6 +1170,19 @@ console.log(panObject)
 
                                                 selectedShapeName={selectedShapeName} updateImage={handleUpdateImage}
                                             />
+                                            {panObject[0].lines.map((line, i) => (
+                                                <Line
+                                                    key={i}
+                                                    points={line.points}
+                                                    stroke="#df4b26"
+                                                    strokeWidth={line.brushSize}
+                                                    tension={0.5}
+                                                    lineCap="round"
+                                                    globalCompositeOperation={
+                                                        line.tool === 'eraser' ? 'destination-out' : 'source-over'
+                                                    }
+                                                />
+                                            ))}
                                         </Layer>
 
 
@@ -1125,27 +1204,27 @@ console.log(panObject)
                     <div className="csdkfl3j49usua213d">
                         <div className="bloc23jo234">
                             <button className="btn bgwhistrwe4">
-                                <img className="imdsfghewwj34" src={require('../images/dspbx.png')}/>
+                                <img className="imdsfghewwj34" src={require('../images/dspbx.png')} />
                                 <p className="s3utw3teawd6">Front</p>
                             </button>
                             <button className="btn bgwhistrwe4">
-                                <img className="imdsfghewwj34" src={require('../images/dspbx.png')}/>
+                                <img className="imdsfghewwj34" src={require('../images/dspbx.png')} />
                                 <p className="s3utw3teawd6">Back</p>
                             </button>
                         </div>
                         <div className="bloc23jo234"></div>
                     </div>
                     <div className="">
-                       <div className="sdf943u2324sczxc33">
-                       <InputRange
-                            step={10}
-                            maxValue={100}
-                            minValue={0}
-                            value={rangeValue}
-                            onChange={value => handleZoom(value)}
-                            
-                        />
-                       </div>
+                        <div className="sdf943u2324sczxc33">
+                            <InputRange
+                                step={10}
+                                maxValue={100}
+                                minValue={0}
+                                value={rangeValue}
+                                onChange={value => handleZoom(value)}
+
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

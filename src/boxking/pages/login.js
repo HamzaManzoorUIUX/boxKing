@@ -47,7 +47,8 @@ export default () => {
                     setMessage("Username or password is incorrect");
                 }
                 setOpen(true)
-
+                seterrorDsp(false);
+                setloaderMain(false);
             }
             else {
 

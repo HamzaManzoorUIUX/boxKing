@@ -21,6 +21,7 @@ import Cart from '../boxking/pages/cart'
 import Howitwork from '../boxking/pages/howitwork'
 import Summry from '../boxking/pages/summry'
 import Tool from '../boxking/pages/tool'
+import Packaging from '../boxking/pages/packagingpage'
 import TDcomp from '../boxking/components/tool/threeDMainCom';
 import ProductListing from '../boxking/pages/ProductListing';
 import PrintingDashboard from '../boxking/pages/printing panel/dashboard';
@@ -171,6 +172,9 @@ export function Routes() {
         
           <Route path="/faq">
             <FAQ />
+          </Route>
+          <Route path="/packaging">
+            <Packaging />
           </Route>
           <Route path="/cart">
             <Cart />

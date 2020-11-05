@@ -1,12 +1,14 @@
 import React from 'react';
-export default ({handleUndo,handleRedo,handleDragControl,handleDelete,handleCopyRight,handleCopyLeft})=>{
+export default ({handleUndo,handleRedo,handleDragControl,handleDelete,handleCopyRight,handleCopyLeft,setisToolactive,isToolactive,Setgrid,grid})=>{
     return  <div className="topEditor">
         
     <button className="btn img-Box-tool"><img src={require('../../images/icons/7.png')}/>
     </button>
-    <button className="btn img-Box-tool"><img src={require('../../images/icons/bb2.png')}/>
+    <button onClick={()=>{
+        setisToolactive(!isToolactive)}} className="btn img-Box-tool"><img src={require('../../images/icons/bb2.png')}/>
     </button>
-    <button className="btn img-Box-tool"><img src={require('../../images/icons/bb4.png')}/>
+    <button  onClick={()=>{
+        Setgrid(!grid)}} className="btn img-Box-tool"><img src={require('../../images/icons/bb4.png')}/>
     </button>
     <button className="btn img-Box-tool"><img src={require('../../images/icons/bb1.png')}/>
     </button>

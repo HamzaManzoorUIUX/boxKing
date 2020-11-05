@@ -228,7 +228,7 @@ export default () => {
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md-12" style={{ padding: 0 }}>
+                                                <div class="col-md-12" style={{ padding: 0 ,marginLeft:-10}}>
                                                     <span class="pac-type">Packaging Description</span>
                                                 </div>
                                             </div>

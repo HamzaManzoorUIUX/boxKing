@@ -90,7 +90,7 @@ export default () => {
                         </div>
                     </> : <>
                             <div className="ml-5 mr-5 box-cart mb-5 mt-5">
-                                <div className="row">
+                                <div className="row setMinHeight">
                                     <div className="col-md-8">
                                         <div className="your-cart">
                                             <h4 className="mt-3 mb-3 tag pl-4 ml-2">Your Cart</h4>
@@ -99,14 +99,14 @@ export default () => {
 
                                             {
                                                 cart.items.map(x => <div className="container mt-3">
-                                                    <div className="row">
+                                                    <div className="row justify-content-center align-items-center">
                                                         <div className="col-md-2">
                                                             <img className="cart-box ml-4 mt-0" style={{ width: '100%' }} src={x.printimage} alt="" />
                                                         </div>
                                                         <div className="col-md-4">
-                                                            <h4 className="tag mb-0">{x.product} <span
+                                                            <h4 className="tag mb-0 font-16px">{x.product} <span
                                                                 className="tag custom-tag">{x.nonCustomize ? "(Customized)" : ""}</span></h4>
-                                                            <p className="brochures__des">{x.description ? x.description : 'Perfect binding135 and 250g/m<sup>2</sup> art paper 96 pages with cover'}</p>
+                                                            <p className="brochures__des font-12px">{x.description ? x.description : 'Perfect binding135 and 250g/m<sup>2</sup> art paper 96 pages with cover'}</p>
                                                         </div>
                                                         <div className="col-md-3">
                                                             <div className="ml-5 mt-1 center">
@@ -129,10 +129,10 @@ export default () => {
                                                         </div>
 
                                                         <div className="col-md-1">
-                                                            <h4 className="mt-2 mb-3 tag pl-4 ml-2">${parseFloat(x.purchaseAmount * x.quantity).toFixed(2)}</h4>
+                                                            <h4 className="mt-3 mb-3 tag pl-4 ml-2">${parseFloat(x.purchaseAmount * x.quantity).toFixed(2)}</h4>
                                                         </div>
                                                         <div className="col-md-2">
-                                                            <button type="button" className="mt-3 btn btn-outline-prm btn-block waves-effect" onClick={() => {
+                                                            <button type="button" className=" btn btn-outline-prm btn-block waves-effect" onClick={() => {
                                                                 history.push('/summry', { obj: x });
 
                                                             }} >View Summry</button>
@@ -154,26 +154,26 @@ export default () => {
                                     </div>
                                     <div className="col-md-4">
                                         <div className="your-cart box-cart">
-                                            <h4 className="mt-3 mb-3 tag pl-4 ml-2">Summary</h4>
+                                            <h4 className="mt-3 mb-3 tag pl-4 ml-2 font-20px">Summary</h4>
                                             <hr className="new2" />
                                             <br /><br />
                                             <div className="container">
                                                 <div className="row">
                                                     <div className="col-sm-9">
-                                                        <h4 className="mb-3 tag pl-3">Printing Company</h4>
+                                                        <h4 className="mb-3 tag pl-3 font-16px">Printing Company</h4>
 
-                                                        <h4 className="mb-3 tag pl-3">Total</h4>
-                                                        <h4 className="mb-3 tag pl-3">Extra Amount</h4>
-                                                        <h4 className="mb-3 tag pl-3">Delivery Charges</h4>
-                                                        <h4 className="mb-3 tag pl-3">Total VAT</h4>
+                                                        <h4 className="mb-3 tag pl-3 font-16px">Total</h4>
+                                                        <h4 className="mb-3 tag pl-3 font-16px">Extra Amount</h4>
+                                                        <h4 className="mb-3 tag pl-3 font-16px">Delivery Charges</h4>
+                                                        <h4 className="mb-3 tag pl-3 font-16px">Total VAT</h4>
                                                     </div>
                                                     <div className="col-sm-3">
-                                                        <h4 className="mb-3 tag pl-4 ml-2">{cart.printiingCompany.CompanyName}</h4>
+                                                        <h4 className="mb-3 tag pl-4 ml-2 font-16px">{cart.printiingCompany.CompanyName}&nbsp;</h4>
 
-                                                        <h4 className="mb-3 tag pl-4 ml-2">${parseFloat(cart.total).toFixed(2)}</h4>
-                                                        <h4 className="mb-3 tag pl-4 ml-2">${parseFloat(cart.extraAmount).toFixed(2)}</h4>
-                                                        <h4 className="mb-3 tag pl-4 ml-2">${parseFloat(cart.deliveryCharges).toFixed(2)}</h4>
-                                                        <h4 className="mb-3 tag pl-4 ml-2">${0}</h4>
+                                                        <h4 className="mb-3 tag pl-4 ml-2 font-16px">${parseFloat(cart.total).toFixed(2)}</h4>
+                                                        <h4 className="mb-3 tag pl-4 ml-2 font-16px">${parseFloat(cart.extraAmount).toFixed(2)}</h4>
+                                                        <h4 className="mb-3 tag pl-4 ml-2 font-16px">${parseFloat(cart.deliveryCharges).toFixed(2)}</h4>
+                                                        <h4 className="mb-3 tag pl-4 ml-2 font-16px">${0}</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -193,11 +193,7 @@ export default () => {
                                             </div>
                                             <div className="container">
                                                 <div className="row">
-
-                                                    <div className="col-sm-4">
-                                                        <h3 className="mb-3 tag pl-3 total_tag">Sub Total</h3>
-                                                    </div>
-                                                    <div className="col-sm-8" style={{ display: 'flex' }}>
+                                                    <div className="col-sm-12 font-16px d-flex justify-content-around">
                                                         <Form.Check
                                                             style={{ padding: 10 }}
                                                             onClick={() => handleShipping(0)}
@@ -220,7 +216,7 @@ export default () => {
                                             </div>
                                         </div>
 
-                                        <button type="button" className="mt-3 btn btn-outline-prm btn-block waves-effect" onClick={() => {
+                                        <button type="button" className="mt-3 btn btn-outline-prm bg-themeOrange text-white font-18px btn-block waves-effect" onClick={() => {
                                             setpaynow(true)
                                         }} >Proceed to Payment</button>
                                     </div>

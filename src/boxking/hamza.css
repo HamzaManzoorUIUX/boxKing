@@ -171,6 +171,38 @@ align-items: center;
 .DashoardIcon>img.doller{
     width: 13px;
 }
+.faqsCards{
+    position: relative;
+    height: 46px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: white !important;
+}
+.faqsCards:hover{
+    color: var(--themeOrange) !important;
+}
+.faqsCards:hover::after{
+    color: var(--themeOrange);
+    border: 1px solid var(--themeOrange);
+}
+.faqsCards::after{
+    content: '+';
+    position: absolute;
+    float: right;
+    right: 1rem;
+    font-size: 1rem;
+    color: lightgray;
+    padding: 4px 5px 0px 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+    text-align: center;
+}
+.bg-transparent {
+    background-color: transparent !important;
+}
 @media(max-width:767px){
     #myCarousel .carousel-item h4{
         font-size: 25px !important;

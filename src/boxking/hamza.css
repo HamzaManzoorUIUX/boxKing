@@ -353,10 +353,16 @@ height: 100px;
     position: absolute;
     box-shadow: none !important;
 }
+
 .myTextCenter{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.myMarginBottom{
+    position: sticky;
+    top: 0;
+    z-index: 3 !important;
 }
 @media(max-width:992px){
     .cartGrid{
@@ -475,6 +481,9 @@ height: 100px;
         }
     }
 @media(max-width:767px){
+    .sticky .sticky-inner{
+        top: 81px !important;
+    }
     .cartGrid{
 display: flex;
 justify-content: center;

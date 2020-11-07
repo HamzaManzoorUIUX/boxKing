@@ -18,7 +18,7 @@ export default () => {
                 We're not only a service providers.
                                   </h2>
               <p className="mt-2 f-14-how">We provide best solutions for a Coaching Services. If you need any help in cleaning or maintenance contact us today to get your body clean. We provide best solutions for a Coaching Services. We provide best solutions for a Coaching Services. If you need any help in cleaning or maintenance contact us today to get your body clean.</p>
-              <button className="btn btn-theme-how mt-3">Start Today</button>
+              <button className="btn btn-theme-how mt-3 mb-3 mb-md-0">Start Today</button>
             </div>
 
             <div className="col-md-6 col-12 text-center">
@@ -106,7 +106,7 @@ export default () => {
             <div className="col-md-6 col-12">
               <h2 className="cat-title"> The power of Boxking</h2>
               <p className="mt-2 f-14-how">We provide best solutions for a Coaching Services. If you need any help in cleaning or maintenance contact us today to get your body clean. We provide best solutions for a Coaching Services. We provide best solutions for a Coaching Services. If you need any help in cleaning or maintenance contact us today to get your body clean.</p>
-              <button className="btn btn-theme-how">Start Today</button>
+              <button className="btn btn-theme-how mb-3 mb-md-0">Start Today</button>
             </div>
 
             <div className="col-md-6 col-12 text-center">
@@ -126,7 +126,7 @@ export default () => {
             <div className="col-md-6 col-12">
               <h2 className="cat-title"> The power of Boxking</h2>
               <p className="mt-2 f-14-how">We provide best solutions for a Coaching Services. If you need any help in cleaning or maintenance contact us today to get your body clean. We provide best solutions for a Coaching Services. We provide best solutions for a Coaching Services. If you need any help in cleaning or maintenance contact us today to get your body clean.</p>
-              <button className="btn btn-theme-how">Start Today</button>
+              <button className="btn btn-theme-how mb-3 mb-md-0">Start Today</button>
             </div>
 
           </div>

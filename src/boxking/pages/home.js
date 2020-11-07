@@ -315,7 +315,7 @@ const handleActiveIndex=(val)=>{
             </div>
           </section>
 
-        <div style={{marginLeft:'11%',marginRight:'11%'}}>
+        <div className='margin-11'>
         <section className="category-section">
             <div className="container">
               <div className="row mb-4 mt-4">
@@ -484,8 +484,9 @@ const handleActiveIndex=(val)=>{
         </div>
         <div>
           
-        <section className="we-offer-area text-center bg-gray" style={{paddingLeft:'12%',paddingRight:'12%'}}>
-            <div className="container"><br />
+        <section className="we-offer-area text-center bg-gray">
+          <div className="margin-11">
+          <div className="container"><br />
               <div className="row mb-4 mt-4">
                 <div className="col-md-6 offset-md-3 text-center">
                   <h2 className="cat-title mb-3">What We Do</h2>
@@ -551,7 +552,8 @@ const handleActiveIndex=(val)=>{
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+            </section>
       
         <section className="banners-section" style={{paddingLeft:'12%',paddingRight:'12%'}}>
             <div className="container">
@@ -590,7 +592,7 @@ const handleActiveIndex=(val)=>{
 
     
         </div>
-        <div style={{marginLeft:'11%',marginRight:'11%'}}>
+        <div className="margin-11">
         <section className="blog-section">
             <div className="container">
               <div className="row mb-4 mt-5">

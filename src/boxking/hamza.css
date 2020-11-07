@@ -99,7 +99,48 @@ display: none;
 .your-cart{
     padding-bottom: 30px;
 }
+.margin-11{
+    margin-left: 11%;
+    margin-right: 11%;
+}
 @media(max-width:992px){
+    .category-img-cs{
+        margin-bottom: 30px !important;
+    }
+    .category-img-cs img{
+        max-height: 120px;
+        margin: auto;
+    }
+    .navbrr-tt{
+        padding-bottom: 6px !important;
+    }
+     .navbar-collapse{
+        position: absolute;
+    top: 100%;
+    /* width: 100%; */
+    left: -10px;
+    right: 0px;
+    margin: 0px !important;
+    padding: 20px;
+    background: white;
+    }
+    .form-zxsyu{
+    display: flex;
+    flex-direction: column;
+    }
+    .form-zxsyu a{
+margin-top: 6px;
+margin-bottom: 6px;
+    }
+    .btn.cstbtns2{
+        max-width: 200px;
+        margin:6px 0px !important;
+    
+    }
+    .margin-11{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
     #myCarousel .carousel-item h4{
         font-size: 42px !important;
     }
@@ -203,7 +244,32 @@ align-items: center;
 .bg-transparent {
     background-color: transparent !important;
 }
+
 @media(max-width:767px){
+    .sticky-bars{
+     position: fixed !important;
+left: 0;
+right: 0;
+    }
+    .lorem-section{
+        margin-top: 100px !important;
+    }
+    .navbar-toggler{
+        padding-right: 30px !important;
+    }
+    .logomain{
+        width: 150px !important;
+        height: auto !important;
+    }
+    .bxshd-none12dsdsds{
+        position: relative;
+        float: none;
+        width: 100% !important;
+    }
+    .margin-11{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
     #myCarousel .carousel-item h4{
         font-size: 25px !important;
     }
@@ -211,11 +277,23 @@ align-items: center;
         position: static !important;
     }
 }
-@media only screen and(max-width:700px){
+@media(max-width:700px){
+
+    .footer-cs h5{
+        font-size: 20px !important;
+            }
     #myCarousel .carousel-item h4{
         font-size: 25px !important;
     }}
-/* dashbord card design */
+
+    @media(max-width:500px){
+        .margin-11{
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+      
+    }
+    /* dashbord card design */
   /*User Dashboard*/
   .card-counter{
     box-shadow: 2px 2px 10px #DADADA;

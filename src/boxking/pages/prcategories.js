@@ -114,7 +114,7 @@ export default () => {
                   productTypes.map(x => <div onClick={() => {
                     history.push("/categories/productTypes/producttype", { productType: x })
 
-                  }} class="col-md-3 text-center col-6">
+                  }} class="col-md-6 col-sm-6 col-lg-3 text-center col-12">
                     <div class="card category-card-cs">
                       <div class="category-img-cs">
                         <img

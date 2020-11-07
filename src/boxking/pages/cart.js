@@ -91,25 +91,27 @@ export default () => {
                     </> : <>
                             <div className="ml-5 mr-5 box-cart mb-5 mt-5">
                                 <div className="row setMinHeight">
-                                    <div className="col-md-8">
+                                    <div className="col-md-6 col-lg-8">
                                         <div className="your-cart">
                                             <h4 className="mt-3 mb-3 tag pl-4 ml-2 font-20px">Your Cart</h4>
                                             <hr className="new2" />
                                             <br /><br />
 
                                             {
-                                                cart.items.map(x => <div className="container mt-3">
-                                                    <div className="row justify-content-center align-items-center">
-                                                        <div className="col-md-2 text-center">
-                                                            <img className="cart-box ml-4 mt-0" style={{width:'80%' }} src={x.printimage} alt="" />
+                                                cart.items.map(x => <div className="container mt-3 overflow-auto">
+                                                    <div className="cartGrid">
+                                                        <div className="cart-Item">
+                                                            <div className=" cartImg">
+                                                                <img className="cart-box ml-4 mt-0" src={x.printimage} alt="" />
+                                                            </div>
                                                         </div>
-                                                        <div className="col-md-4">
+                                                        <div className="cart-Item flex-column align-items-start">
                                                             <h4 className="tag mb-0 font-16px">{x.product} <span
                                                                 className="tag custom-tag">{x.nonCustomize ? "(Customized)" : ""}</span></h4>
                                                             <p className="brochures__des font-12px">{x.description ? x.description : 'Perfect binding135 and 250g/m<sup>2</sup> art paper 96 pages with cover'}</p>
                                                         </div>
-                                                        <div className="col-md-2">
-                                                            <div className="ml-5 mt-1 center">
+                                                        <div className="cart-Item">
+                                                            <div className=" center">
                                                                 <div className="input-group">
                                                                     <button className="dec__btn" onClick={() => {
                                                                         dispatch({
@@ -128,21 +130,24 @@ export default () => {
                                                             </div>
                                                         </div>
 
-                                                        <div className="col-md-2">
+                                                        <div className="cart-Item">
                                                             <h4 className="mt-3 mb-3 tag">${parseFloat(x.purchaseAmount * x.quantity).toFixed(2)}</h4>
                                                         </div>
-                                                        <div className="col-md-2">
-                                                            <button type="button" className=" btn btn-outline-prm btn-block waves-effect seHeight" onClick={() => {
-                                                                history.push('/summry', { obj: x });
+                                                        <div className="cart-Item">
+                                                            <div className="position-relative">
+                                                                <button type="button" className=" btn btn-outline-prm btn-block waves-effect" onClick={() => {
+                                                                    history.push('/summry', { obj: x });
 
-                                                            }} >View Summry</button>
-                                                            <div style={{ position: 'absolute', top: '-21px', right: 0 }}>
-                                                                <button style={{ backgroundColor: 'white', borderColor: 'transparent' }} onClick={() => {
-                                                                    dispatch({
+                                                                }} >View Summry</button>
+                                                                <div style={{ position: 'absolute', top: '-21px', right: 0 }}>
+                                                                    <button style={{ backgroundColor: 'white', borderColor: 'transparent' }} onClick={() => {
+                                                                        dispatch({
 
-                                                                        type: actionTypes.removeItem, payload: { id: x.id }
-                                                                    });
-                                                                }} ><MdCancel fontSize={22} color="#7c7c7c" /></button>
+                                                                            type: actionTypes.removeItem, payload: { id: x.id }
+                                                                        });
+                                                                    }} ><MdCancel fontSize={22} color="#7c7c7c" /></button>
+                                                                </div>
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -152,14 +157,13 @@ export default () => {
                                             }
                                         </div>
                                     </div>
-                                    <div className="col-md-4">
+                                    <div className="col-md-6 col-lg-4">
                                         <div className="your-cart box-cart">
                                             <h4 className="mt-3 mb-3 tag pl-4 ml-2 font-20px">Summary</h4>
                                             <hr className="new2" />
                                             <br /><br />
-                                            <div className="container">
-                                                <div className="row">
-                                                    <div className="col-sm-8">
+                                            <div className="row">
+                                                    <div className="col-sm-7">
                                                         <h4 className="mb-3 tag pl-3 font-16px">Printing Company</h4>
 
                                                         <h4 className="mb-3 tag pl-3 font-16px">Total</h4>
@@ -167,7 +171,7 @@ export default () => {
                                                         <h4 className="mb-3 tag pl-3 font-16px">Delivery Charges</h4>
                                                         <h4 className="mb-3 tag pl-3 font-16px">Total VAT</h4>
                                                     </div>
-                                                    <div className="col-sm-4">
+                                                    <div className="col-sm-5">
                                                         <h4 className="mb-3 tag  ml-2 font-16px">{cart.printiingCompany.CompanyName}&nbsp;</h4>
 
                                                         <h4 className="mb-3 tag ml-2 font-16px">${parseFloat(cart.total).toFixed(2)}</h4>
@@ -176,21 +180,19 @@ export default () => {
                                                         <h4 className="mb-3 tag ml-2 font-16px">${0}</h4>
                                                     </div>
                                                 </div>
-                                            </div>
                                             <hr />
 
 
-                                            <div className="container">
-                                                <div className="row">
+                                            <div className="row">
 
-                                                    <div className="col-sm-8">
-                                                        <h3 className="mb-3 tag pl-3 total_tag">Sub Total</h3>
-                                                    </div>
-                                                    <div className="col-sm-4">
-                                                        <h3 className="mb-3 tag ml-1 total_tag">${parseFloat(cart.subTotal).toFixed(2)}</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
+<div className="col-sm-7">
+    <h3 className="mb-3 tag pl-3 total_tag">Sub Total</h3>
+</div>
+<div className="col-sm-5">
+    <h3 className="mb-3 tag ml-1 total_tag">${parseFloat(cart.subTotal).toFixed(2)}</h3>
+</div>
+</div>
+
                                             <div className="container">
                                                 <div className="row">
                                                     <div className="col-sm-12 font-16px text-center">

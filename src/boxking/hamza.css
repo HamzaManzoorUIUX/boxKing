@@ -125,114 +125,8 @@ display: none;
     height: 355px;
     width: 100%;
 }
-@media(max-width:992px){
-#myShadow.show{
-    display: block !important;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(29,14,05,0.2);
-    z-index: 1;
-}
-    .sideNavUser .printingTitle,
-    .sideNavUser .printingTitleSub{
-        display: none;
-    }
-    .sideNavUser .userImg{
-height: auto;
-width: 100%;
-    }
-    .sideNavUser .mtd-2s a{
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-        margin-left: 0px !important;
-        margin-right: 0px !important;
-        width: 100% !important;
-    }
-    .sideNavUser .mtd-2s a .DashoardIcon{
-        display: block;
-margin-left: auto;
-margin-right: auto;
-    }
-    .sideNavUser .mtd-2s a .myText{
-display: none;
-    }
-    #sideNavUser{
-        position: fixed;
-        z-index: 2;
-        left: 0px;
-        width: 80%;
-    }
 
-    .sideNavUser{
-        position: fixed;
-        left: 0px;
-        z-index: 2;
-        max-width: 20% !important;
-        padding: 0px !important;
-    }
-    .otherConteny{
-        max-width: 80%;
-        flex: 0 0 80%;
-        margin-left: 20%;
-        padding: 0px !important;
-    }
-    .cat-title{
-        font-size: 2rem !important;
-    }
-    .bg-h-w,.h-cs-padd{
-        padding: 50px 0px 50px 0px !important;
-    }
-    .category-img-cs{
-        margin-bottom: 30px !important;
-    }
-    .category-img-cs img{
-        max-height: 120px;
-        margin: auto;
-    }
-    .navbrr-tt{
-        padding-bottom: 6px !important;
-    }
-     .navbar-collapse{
-        position: absolute;
-    top: 100%;
-    /* width: 100%; */
-    left: -10px;
-    right: 0px;
-    margin: 0px !important;
-    padding: 20px;
-    background: white;
-    }
-    .form-zxsyu{
-    display: flex;
-    flex-direction: column;
-    }
-    .form-zxsyu a{
-margin-top: 6px;
-margin-bottom: 6px;
-    }
-    .btn.cstbtns2{
-        max-width: 200px;
-        margin:6px 0px !important;
-    
-    }
-    .margin-11{
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-    #myCarousel .carousel-item h4{
-        font-size: 42px !important;
-    }
-    .class-border-cs{
-        border: none;
-        padding: 0px;
-    }
-    .we-offer-area.text-center .item{
-        padding: 33px 20px 32px !important;
-    }
-}
+
 
 /* product details */
 .card-header{
@@ -300,6 +194,29 @@ align-items: center;
     justify-content: flex-start;
     align-items: center;
     background-color: white !important;
+    padding-right: 45px !important;
+}
+.cartImg{
+    max-width: 150px;
+    max-height: 150px;
+width: 100px;
+height: 100px;
+
+}
+.cartImg>img{
+  width: 100%;
+    margin: auto !important;
+    object-fit: fill;
+}
+.cartGrid{
+    display: grid;
+    grid-template-columns: 21.4% 28.5% 14.2% 14.2% 21.4%;
+}
+.cart-Item{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .faqsCards:hover{
     color: var(--themeOrange) !important;
@@ -328,60 +245,7 @@ align-items: center;
 .sticky-bars{
     z-index: 3 !important;
 }
-@media(max-width:767px){
-    .sliderImg{
-        max-width: 250px !important;
 
-    }
-    .myMarginBottom{
-        margin-bottom: 82px !important;
-    }
-    .sticky-bars{
-     position: fixed !important;
-left: 0;
-right: 0;
-
-    }
-   
-    .navbar-toggler{
-        padding-right: 30px !important;
-    }
-    .logomain{
-        width: 150px !important;
-        height: auto !important;
-    }
-    .bxshd-none12dsdsds{
-        position: relative;
-        float: none;
-        width: 100% !important;
-    }
-    .margin-11{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    #myCarousel .carousel-item h4{
-        font-size: 25px !important;
-    }
-    #myCarousel .carousel-item .mask{
-        position: static !important;
-    }
-}
-@media(max-width:700px){
-
-    .footer-cs h5{
-        font-size: 20px !important;
-            }
-    #myCarousel .carousel-item h4{
-        font-size: 25px !important;
-    }}
-
-    @media(max-width:500px){
-        .margin-11{
-            margin-left: 0px;
-            margin-right: 0px;
-        }
-      
-    }
     /* dashbord card design */
   /*User Dashboard*/
   .card-counter{
@@ -391,6 +255,7 @@ right: 0;
     background-color: #fff;
     height: 100px;
     border-radius: 5px;
+    margin: .5rem auto;
     transition: .3s linear all;
   }
 
@@ -493,6 +358,185 @@ right: 0;
     flex-direction: column;
     justify-content: center;
 }
+@media(max-width:992px){
+    .cartGrid{
+        grid-template-columns: 150px 200px 100px;
+        grid-row-gap: 20px;
+    }
+    #myShadow.show{
+        display: block !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(29,14,05,0.2);
+        z-index: 1;
+    }
+        .sideNavUser .printingTitle,
+        .sideNavUser .printingTitleSub{
+            display: none;
+        }
+        .sideNavUser .printingTitleMenu{
+            display: none;
+        }
+        .sideNavUser .userImg{
+    height: auto;
+    width: 80%;
+        }
+        .sideNavUser .mtd-2s a{
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+            width: 100% !important;
+        }
+        .sideNavUser .mtd-2s a .DashoardIcon{
+            display: block;
+    margin-left: auto;
+    margin-right: auto;
+        }
+        .sideNavUser .mtd-2s a .myText{
+    display: none;
+        }
+        #sideNavUser{
+            position: fixed;
+            z-index: 2;
+            left: 0px;
+            width: 80%;
+           
+        }
+    
+        .sideNavUser{
+            position: fixed;
+            left: 0px;
+            z-index: 2;
+            max-width: 20% !important;
+            padding: 0px !important;
+        }
+        .otherConteny{
+            max-width: 80%;
+            flex: 0 0 80%;
+            margin-left: 20%;
+            padding: 0px !important;
+        }
+        .cat-title{
+            font-size: 2rem !important;
+        }
+        .bg-h-w,.h-cs-padd{
+            padding: 50px 0px 50px 0px !important;
+        }
+        .category-img-cs{
+            margin-bottom: 30px !important;
+        }
+        .category-img-cs img{
+            max-height: 120px;
+            margin: auto;
+        }
+        .navbrr-tt{
+            padding-bottom: 6px !important;
+        }
+         .navbar-collapse{
+            position: absolute;
+        top: 100%;
+        /* width: 100%; */
+        left: -10px;
+        right: 0px;
+        margin: 0px !important;
+        padding: 20px;
+        background: white;
+        }
+        .form-zxsyu{
+        display: flex;
+        flex-direction: column;
+        }
+        .form-zxsyu a{
+    margin-top: 6px;
+    margin-bottom: 6px;
+        }
+        .btn.cstbtns2{
+            max-width: 200px;
+            margin:6px 0px !important;
+        
+        }
+        .margin-11{
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        #myCarousel .carousel-item h4{
+            font-size: 42px !important;
+        }
+        .class-border-cs{
+            border: none;
+            padding: 0px;
+        }
+        .we-offer-area.text-center .item{
+            padding: 33px 20px 32px !important;
+        }
+    }
+@media(max-width:767px){
+    .cartGrid{
+display: flex;
+justify-content: center;
+flex-direction: column;
+margin: 20px auto ;
+    }
+    .cart-Item{
+        align-items: center !important;
+    }
+    .sliderImg{
+        max-width: 250px !important;
+
+    }
+    .myMarginBottom{
+        margin-bottom: 82px !important;
+    }
+    .sticky-bars{
+     position: fixed !important;
+left: 0;
+right: 0;
+
+    }
+   
+    .navbar-toggler{
+        padding-right: 30px !important;
+    }
+    .logomain{
+        width: 150px !important;
+        height: auto !important;
+    }
+    .bxshd-none12dsdsds{
+        position: relative;
+        float: none;
+        width: 100% !important;
+    }
+    .margin-11{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    #myCarousel .carousel-item h4{
+        font-size: 25px !important;
+    }
+    #myCarousel .carousel-item .mask{
+        position: static !important;
+    }
+}
+@media(max-width:700px){
+
+    .footer-cs h5{
+        font-size: 20px !important;
+            }
+    #myCarousel .carousel-item h4{
+        font-size: 25px !important;
+    }}
+
+@media(max-width:500px){
+        .margin-11{
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+      
+    }
 @media(max-width:480px){
     .videoIframe{
         height: 255px;

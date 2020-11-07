@@ -73,7 +73,8 @@ export default () => {
       return null;
 
   }
-  return <div className="bgNav bgNav sticky-bars">
+  return <div className="myMarginBottom">
+     <div className="bgNav bgNav sticky-bars">
     <Navbar  expand="lg" style={{ boxShadow: 'none',marginLeft:'9.5%' }}>
       <Navbar.Brand as={Link} to="/" ><img className="logomain" src={logo} /></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -176,6 +177,8 @@ export default () => {
   </div>
 
 
+  </div>
+  
 
 }
 

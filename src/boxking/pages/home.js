@@ -249,7 +249,7 @@ const handleActiveIndex=(val)=>{
    <WhatWeGet/>
    <Sub/> */}
 
-          <section className="slider-margin">
+          <section className="myMarginTop">
             <div id="myCarousel" className="carousel slide carousel-fade" data-ride="carousel">
               <div className="carousel-inner">
                 <div className={activeIndex==0?"carousel-item active":"carousel-item"}>
@@ -265,7 +265,7 @@ const handleActiveIndex=(val)=>{
                           <button type="button" className="btn change-btn pl-4 pr-4 mb-3">Download templete1</button>
                         </div>
                         <div className="col-md-5 col-12">
-                          <img src="https://cdn.shopify.com/s/files/1/0018/1587/1546/products/custom-design-corrugated-mailer-boxes_1024x1024.png?v=1591919291" className="mx-auto" alt="slide" />
+                          <img src="https://cdn.shopify.com/s/files/1/0018/1587/1546/products/custom-design-corrugated-mailer-boxes_1024x1024.png?v=1591919291" className="mx-auto sliderImg" alt="slide" />
                         </div>
                       </div>
                     </div>
@@ -284,7 +284,7 @@ const handleActiveIndex=(val)=>{
                           <button type="button" className="btn change-btn pl-4 pr-4 mb-3">Download templete2</button>
                         </div>
                         <div className="col-md-5 col-12">
-                          <img src="https://www.blueboxpackaging.com/wp-content/uploads/2018/12/Custom-Cardboard-Espresso-You-Reverse-Tuck-Coffee-Boxes.jpg" className="mx-auto" alt="slide" />
+                          <img src="https://www.blueboxpackaging.com/wp-content/uploads/2018/12/Custom-Cardboard-Espresso-You-Reverse-Tuck-Coffee-Boxes.jpg" className="mx-auto sliderImg" alt="slide" />
                         </div>
                       </div>
                     </div>
@@ -303,7 +303,7 @@ const handleActiveIndex=(val)=>{
                           <button type="button" className="btn change-btn pl-4 pr-4 mb-3">Download templete3</button>
                         </div>
                         <div className="col-md-5 col-12">
-                          <img src="https://cdn.shopify.com/s/files/1/0018/1587/1546/products/custom-branded-product-box-tuck-end_800x.png?v=1591919254" className="mx-auto" alt="slide" />
+                          <img src="https://cdn.shopify.com/s/files/1/0018/1587/1546/products/custom-branded-product-box-tuck-end_800x.png?v=1591919254" className="mx-auto sliderImg" alt="slide" />
                         </div>
                       </div>
                     </div>
@@ -583,7 +583,7 @@ const handleActiveIndex=(val)=>{
 
                 <div className="col-md-6">
                   <div className="">
-                    <iframe width="100%" height="355" src="https://www.youtube.com/embed/RkhY58eprQg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe className="videoIframe"  src="https://www.youtube.com/embed/RkhY58eprQg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>
                 </div>
               </div>

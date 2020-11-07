@@ -87,13 +87,14 @@ export default () => {
                             <li>21 styles in 1 billion variations</li>
                             <li>Online Designer with 3D preview</li>
                         </ul>
-
-                        <button className="btn btn-theme mt-3 font-16px">Select Packaging</button>
+<div>
+<button className="btn btn-theme mt-3 font-16px mb-3">Select Packaging</button>
+</div>
                     </div>
                 </div>
             </div>
         </section>
-        <section className="we-offer-area" style={{ backgroundColor: 'white' }}>
+        <section className="we-offer-area mt-3" style={{ backgroundColor: 'white' }}>
             <div className="container">
 
 

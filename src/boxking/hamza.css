@@ -103,7 +103,82 @@ display: none;
     margin-left: 11%;
     margin-right: 11%;
 }
+.nsskseucc{
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+}
+.nsskseucc a{
+    min-width: fit-content !important;
+}
+.userImg{
+    width: 111px;
+    height: 111px;
+    margin-top: 22px;
+    margin-bottom: 13px;
+}
+#myShadow{
+    display: none;
+}
 @media(max-width:992px){
+#myShadow.show{
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(29,14,05,0.2);
+    z-index: 1;
+}
+    .sideNavUser .printingTitle,
+    .sideNavUser .printingTitleSub{
+        display: none;
+    }
+    .sideNavUser .userImg{
+height: auto;
+width: 100%;
+    }
+    .sideNavUser .mtd-2s a{
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        width: 100% !important;
+    }
+    .sideNavUser .mtd-2s a .DashoardIcon{
+        display: block;
+margin-left: auto;
+margin-right: auto;
+    }
+    .sideNavUser .mtd-2s a .myText{
+display: none;
+    }
+    #sideNavUser{
+        position: fixed;
+        z-index: 2;
+        left: 0px;
+        width: 80%;
+    }
+
+    .sideNavUser{
+        position: fixed;
+        left: 0px;
+        z-index: 2;
+        max-width: 20% !important;
+        padding: 0px !important;
+    }
+    .otherConteny{
+        max-width: 80%;
+        flex: 0 0 80%;
+        margin-left: 20%;
+        padding: 0px !important;
+    }
+    .cat-title{
+        font-size: 2rem !important;
+        text-align: center;
+    }
     .bg-h-w,.h-cs-padd{
         padding: 50px 0px 50px 0px !important;
     }
@@ -247,13 +322,15 @@ align-items: center;
 .bg-transparent {
     background-color: transparent !important;
 }
-
+.sticky-bars{
+    z-index: 3 !important;
+}
 @media(max-width:767px){
     .sticky-bars{
      position: fixed !important;
 left: 0;
 right: 0;
-z-index: 2 !important;
+
     }
     .lorem-section{
         margin-top: 100px !important;

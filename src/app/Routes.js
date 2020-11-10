@@ -167,15 +167,15 @@ export function Routes() {
     return (
         <Switch>
         <Route exact path="/">
-        <HomePage />
+        <Packaging />
         </Route>
         
           <Route path="/faq">
             <FAQ />
           </Route>
-          <Route path="/packaging">
+          {/* <Route path="/packaging">
             <Packaging />
-          </Route>
+          </Route> */}
           <Route path="/cart">
             <Cart />
           </Route>

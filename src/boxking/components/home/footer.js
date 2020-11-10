@@ -3,16 +3,16 @@ import {useHistory} from 'react-router-dom'
 export default () => {
     const history=useHistory();
     return    <section class="footer-cs">
-    <div class="container-fluid cont-footer-cs">
+    <div class="container cont-footer-cs">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-3 col-margin-cs">
-                <div class="row">
-                    <div class="col-md-12 product-heading-cs">
+                <div class="">
+                    <div class=" product-heading-cs">
                         <ul>
                             <li><h5>Products</h5></li>
                         </ul>
                     </div>
-                    <div class="col-md-12 Products-cs">
+                    <div class="Products-cs">
                         <ul>
                             <li><a href="javascript:void(0)">Folding Cartons</a></li>
                             <li><a href="javascript:void(0)">Packing with lions</a></li>
@@ -27,13 +27,13 @@ export default () => {
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 col-margin-cs">
-                <div class="row class-border-cs">
-                    <div class="col-md-12 product-heading-cs">
+                <div class="class-border-cs">
+                    <div class="product-heading-cs">
                         <ul>
                             <li><h5>Information</h5></li>
                         </ul>
                     </div>
-                    <div class="col-md-12 Products-cs">
+                    <div class="Products-cs">
                         <ul>
                             <li><a href="javascript:void(0)">About Us</a></li>
                             <li><a href="javascript:void(0)">Order Information</a></li>
@@ -47,13 +47,13 @@ export default () => {
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 col-margin-cs">
-                <div class="row class-border-cs">
-                    <div class="col-md-12 product-heading-cs">
+                <div class="class-border-cs">
+                    <div class="product-heading-cs">
                         <ul>
                             <li><h5>Newsletter</h5></li>
                         </ul>
                     </div>
-                    <div class="col-md-12 Subscribe-cs">
+                    <div class="Subscribe-cs">
                         <ul>
                             <li>
                                 <p>Subscribe to our newsletter now and receive a £5 welcome voucher for your next order!</p>
@@ -76,13 +76,13 @@ export default () => {
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 col-margin-cs">
-                <div class="row class-border-cs">
-                    <div class="col-md-12 product-heading-cs">
+                <div class="class-border-cs">
+                    <div class="product-heading-cs">
                         <ul>
                             <li><h5>Contact</h5></li>
                         </ul>
                     </div>
-                    <div class="col-md-12 Products-cs">
+                    <div class="Products-cs">
                         <ul>
                             <li>London-based Service Centre</li>
                             <li>

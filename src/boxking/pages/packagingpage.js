@@ -45,8 +45,9 @@ export default () => {
         <Strip />
         <Navbar />
         <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
-            <div className="col-md-12 sticky-inner"  >
-                <div className="nsskseucc side-sticky" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <div className="sticky-inner myBorder"  >
+           <div className="container">
+           <div className="nsskseucc side-sticky" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a className={TabIndex == 0 ? "nav-link activelinkwwe213" : "nav-link"} id="v-pills-home-tab" data-toggle="pill" onClick={() => {
                         setTabIndex(0)
                         refmain0.current.scrollIntoView({ behavior: 'smooth' })
@@ -65,6 +66,7 @@ export default () => {
                     }} role="tab" aria-controls="v-pills-settings" aria-selected="false">Test Run</a>
                 </div>
 
+           </div>
             </div>
 
         </div>
@@ -491,7 +493,9 @@ export default () => {
 
         <section class="detail-boxes">
             <div class="container">
-                <div class="card bg-gray-cards">
+                <div className='row'>
+<div className='col-md-12'>
+<div class="card bg-gray-cards">
                     <div class="row mt-5">
                         <div class="col-md-6">
                             <img class="detail-img" src="https://www.saxoprint.co.uk/-/media/saxoprint/products/special-box/samples/packaging-sample-set.ashx?mh=470&mw=845&hash=029AC2BB90D9E79626F022E9A2F400C8" />
@@ -506,6 +510,8 @@ export default () => {
 
 
                     </div>
+                </div>
+</div>
                 </div>
             </div>
         </section>

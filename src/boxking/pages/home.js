@@ -256,7 +256,7 @@ const handleActiveIndex=(val)=>{
                   <div className="mask flex-center">
                     <div className="container h-100 d-flex justify-content-center align-items-center">
                       <div className="row align-items-center">
-                        <div className="col-md-6 offset-md-1 col-12 mt-5 mt-md-0">
+                        <div className="col-md-6 col-12 p-md-0 mt-5 mt-md-0">
                           <h4>
                             Copying and <br />
                                             Printing Center
@@ -264,7 +264,7 @@ const handleActiveIndex=(val)=>{
                           <p>We bring design together with technology</p>
                           <button type="button" className="btn change-btn pl-4 pr-4 mb-3">Download templete1</button>
                         </div>
-                        <div className="col-md-5 col-12">
+                        <div className="col-md-6 col-12 p-0">
                           <img src="https://cdn.shopify.com/s/files/1/0018/1587/1546/products/custom-design-corrugated-mailer-boxes_1024x1024.png?v=1591919291" className="mx-auto sliderImg" alt="slide" />
                         </div>
                       </div>
@@ -275,7 +275,7 @@ const handleActiveIndex=(val)=>{
                   <div className="mask flex-center">
                     <div className="container h-100 d-flex justify-content-center align-items-center">
                       <div className="row align-items-center">
-                        <div className="col-md-6 offset-md-1 col-12 mt-5 mt-md-0">
+                        <div className="col-md-6 p-0 col-12 mt-5 mt-md-0">
                           <h4>
                             Present your <br />
                                             awesome product
@@ -283,7 +283,7 @@ const handleActiveIndex=(val)=>{
                           <p>We bring design together with technology</p>
                           <button type="button" className="btn change-btn pl-4 pr-4 mb-3">Download templete2</button>
                         </div>
-                        <div className="col-md-5 col-12">
+                        <div className="col-md-6 col-12 p-0">
                           <img src="https://www.blueboxpackaging.com/wp-content/uploads/2018/12/Custom-Cardboard-Espresso-You-Reverse-Tuck-Coffee-Boxes.jpg" className="mx-auto sliderImg" alt="slide" />
                         </div>
                       </div>
@@ -294,7 +294,7 @@ const handleActiveIndex=(val)=>{
                   <div className="mask flex-center">
                     <div className="container h-100 d-flex justify-content-center align-items-center">
                       <div className="row align-items-center">
-                        <div className="col-md-6 offset-md-1 col-12 mt-5 mt-md-0">
+                        <div className="col-md-6 p-0 col-12 mt-5 mt-md-0">
                           <h4>
                             Present your <br />
                                             awesome product
@@ -302,7 +302,7 @@ const handleActiveIndex=(val)=>{
                           <p>We bring design together with technology</p>
                           <button type="button" className="btn change-btn pl-4 pr-4 mb-3">Download templete3</button>
                         </div>
-                        <div className="col-md-5 col-12">
+                        <div className="col-md-6 p-0 col-12">
                           <img src="https://cdn.shopify.com/s/files/1/0018/1587/1546/products/custom-branded-product-box-tuck-end_800x.png?v=1591919254" className="mx-auto sliderImg" alt="slide" />
                         </div>
                       </div>
@@ -315,7 +315,6 @@ const handleActiveIndex=(val)=>{
             </div>
           </section>
 
-        <div className='margin-11'>
         <section className="category-section">
             <div className="container">
               <div className="row mb-4 mt-4">
@@ -481,11 +480,10 @@ const handleActiveIndex=(val)=>{
 
 
    
-        </div>
         <div>
           
         <section className="we-offer-area text-center bg-gray">
-          <div className="margin-11">
+          <div className="">
           <div className="container"><br />
               <div className="row mb-4 mt-4">
                 <div className="col-md-6 offset-md-3 text-center">
@@ -555,10 +553,10 @@ const handleActiveIndex=(val)=>{
           </div>
             </section>
       
-        <section className="banners-section" style={{paddingLeft:'12%',paddingRight:'12%'}}>
+        <section className="banners-section">
             <div className="container">
               <div className="row" >
-                <div className="col-md-6">
+                <div className="col-md-6 p-0">
                   <div className="row">
                     <div className="col-md-12">
                       <h2 className="banner-text-title"> Even More Good Stuff</h2>
@@ -581,7 +579,7 @@ const handleActiveIndex=(val)=>{
 
                 </div>
 
-                <div className="col-md-6">
+                <div className="col-md-6 p-0">
                   <div className="">
                     <iframe className="videoIframe"  src="https://www.youtube.com/embed/RkhY58eprQg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>

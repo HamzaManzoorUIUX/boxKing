@@ -1,12 +1,12 @@
 import React from "react";
-import { Navbar, NavDropdown, Nav, Form, FormControl, Button } from 'react-bootstrap';
-import { IoIosCall,IoMdMail } from "react-icons/io";
-import { RiUserSmileLine } from "react-icons/ri";
+// import { Navbar, NavDropdown, Nav, Form, FormControl, Button } from 'react-bootstrap';
+// import { IoIosCall,IoMdMail } from "react-icons/io";
+// import { RiUserSmileLine } from "react-icons/ri";
 import {GrFacebookOption,GrTwitter,GrInstagram,GrLinkedinOption} from 'react-icons/gr'
 export default () => {
     return   <div className="utility-nav-cs d-none d-md-block">
     <div className="container">
-        <div className="row" style={{paddingLeft:"0.7%",paddingRight:'1.1%',marginTop:2}}>
+        <div className="row" style={{marginTop:2}}>
             <div className="col-12 col-md-6">
                 <p className="small"><i className="bx bx-envelope"></i> boxking@gmail.com | <i className="bx bx-phone"></i> +91-9876543210</p>
             </div>

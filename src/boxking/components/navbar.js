@@ -22,7 +22,7 @@ import {
 
 
 
-export default () => {
+export default ({myclass}) => {
 
   const [showCart, setShowCart] = useState(false);
   const cart = useSelector(x => x.cart);
@@ -74,8 +74,8 @@ export default () => {
 
   }
   return <div className="myMarginBottom">
-    <div className="bgNav bgNav sticky-bars myNavBar">
-      <Navbar expand="lg">
+    <div className={`bgNav bgNav sticky-bars myNavBar ${myclass}`}>
+      <Navbar expand="lg ">
         <div className="container">
           <Navbar.Brand as={Link} to="/" ><img className="logomain" src={logo} /></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -84,7 +84,8 @@ export default () => {
               <Nav.Link as={Link} to="/" >Home</Nav.Link>
               <Nav.Link as={Link} to="/categories"  >Categories</Nav.Link>
               <Nav.Link as={Link} to="/Howitwork" className="navbrr-tt" >How it Works</Nav.Link>
-              {/* <Nav.Link as={Link} to="/packaging" className="navbrr-tt" >Packaging</Nav.Link> */}
+              <Nav.Link as={Link} to="" className="navbrr-tt" >Find a Designer</Nav.Link>
+              <Nav.Link as={Link} to="" className="navbrr-tt" >Pro</Nav.Link>
               {
                 /* 
                       <Nav.Link as={Link} to="/cart" >Cart</Nav.Link>

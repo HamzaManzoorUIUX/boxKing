@@ -189,7 +189,7 @@ align-items: center;
 .sticky-wrapper{
     padding-left: 0px !important;
     padding-right: 0px !important;
-    z-index: 3;
+    z-index: 2;
 }
 .myNavBar .container{
     padding-left: 37px;
@@ -216,6 +216,9 @@ background-color: white !important;
 }
 .myBorder{
     border-bottom: 2px solid #f5aa75 !important;
+}
+.z-indexManage{
+    z-index: 1 !important;
 }
 .faqsCards{
     position: relative;
@@ -379,7 +382,7 @@ height: 100px;
     border: 3px solid white;
     margin-top: -20px;
     line-height: 1.42857;
-    z-index: 9999;
+    z-index: 1;
     position: absolute;
     box-shadow: none !important;
 }
@@ -394,7 +397,25 @@ height: 100px;
     top: 0;
     z-index: 3 !important;
 }
+.noShadow{
+    box-shadow: none !important;
+}
+.navbar{
+    box-shadow: none !important;
+}
+.navbrr-tt{
+    min-width: max-content !important;
+    margin-right: 4% !important;
+}
+.sticky .sticky-inner{
+    padding-left: 0 !important;
+        padding-right: 0 !important;
+}
 @media(max-width:992px){
+   
+    .sticky .sticky-inner{
+        top: 85px !important;
+    }
     .cartGrid{
         grid-template-columns: 150px 200px 100px;
         grid-row-gap: 20px;
@@ -473,14 +494,15 @@ height: 100px;
             padding-bottom: 6px !important;
         }
          .navbar-collapse{
-            position: absolute;
-        top: 100%;
+            position: fixed;
+        top: 81px;
         /* width: 100%; */
         left: -10px;
         right: 0px;
         margin: 0px !important;
         padding: 20px;
         background: white;
+
         }
         .form-zxsyu{
         display: flex;
@@ -509,10 +531,23 @@ height: 100px;
         .we-offer-area.text-center .item{
             padding: 33px 20px 32px !important;
         }
+
     }
 @media(max-width:767px){
+ .nsskseucc{
+/* flex-direction: column; */
+height: 100% !important;
+ }
+ .nsskseucc a{
+     margin-left: 0 !important;
+     margin-right: 0 !important;
+ }
+
+
     .sticky .sticky-inner{
         top: 81px !important;
+        height: auto !important;
+        
     }
     .cartGrid{
 display: flex;
@@ -537,9 +572,7 @@ right: 0;
 
     }
    
-    .navbar-toggler{
-        padding-right: 30px !important;
-    }
+
     .logomain{
         width: 150px !important;
         height: auto !important;
@@ -580,5 +613,17 @@ right: 0;
     .videoIframe{
         height: 255px;
         width: 100%;
+    }
+}
+@media screen and (max-width: 1317px)
+{.navbar {
+    padding-right: 0px!important;
+    margin-left: 0px!important;
+    margin-right: 0px!important;
+    
+}}
+@media(min-width:992px){
+    .sticky .nsskseucc{
+    border-bottom: 2px solid #f5aa75 !important;
     }
 }

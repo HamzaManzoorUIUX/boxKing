@@ -43,11 +43,11 @@ export default () => {
     }, []);
     return <div style={{ backgroundColor: 'white' }}>
         <Strip />
-        <Navbar />
+        <Navbar myclass='noShadow'/>
         <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
             <div className="sticky-inner myBorder"  >
            <div className="container">
-           <div className="nsskseucc side-sticky" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+           <div className="nsskseucc side-sticky " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a className={TabIndex == 0 ? "nav-link activelinkwwe213" : "nav-link"} id="v-pills-home-tab" data-toggle="pill" onClick={() => {
                         setTabIndex(0)
                         refmain0.current.scrollIntoView({ behavior: 'smooth' })
@@ -63,7 +63,10 @@ export default () => {
                     <a className={TabIndex == 3 ? "nav-link activelinkwwe213" : "nav-link"} id="v-pills-settings-tab" data-toggle="pill" onClick={() => {
                         setTabIndex(3)
                         refmain3.current.scrollIntoView({ behavior: 'smooth' })
-                    }} role="tab" aria-controls="v-pills-settings" aria-selected="false">Test Run</a>
+                    }} role="tab" aria-controls="v-pills-settings" aria-selected="false">Samples</a>
+               <a className={TabIndex == 4 ? "nav-link activelinkwwe213" : "nav-link"}>
+Online Designer
+                        </a>
                 </div>
 
            </div>
@@ -101,7 +104,7 @@ export default () => {
 
 
 
-                <div className="col-md-12 mt-3 mb-3 sticky-inner"  >
+                <div className="col-md-12 mt-3 mb-3 sticky-inner z-indexManage"  >
                     <div className="nsskseucc side-sticky  font-16px" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a className={TabIndex == 0 ? "nav-link activelinkwwe213" : "nav-link"} id="v-pills-home-tab" data-toggle="pill" onClick={() => {
                             setTabIndex(0)
@@ -118,14 +121,17 @@ export default () => {
                         <a className={TabIndex == 3 ? "nav-link activelinkwwe213" : "nav-link"} id="v-pills-settings-tab" data-toggle="pill" onClick={() => {
                             setTabIndex(3)
                             refmain3.current.scrollIntoView({ behavior: 'smooth' })
-                        }} role="tab" aria-controls="v-pills-settings" aria-selected="false">Test Run</a>
+                        }} role="tab" aria-controls="v-pills-settings" aria-selected="false">Samples</a>
+                        <a className={TabIndex == 4 ? "nav-link activelinkwwe213" : "nav-link"}>
+Online Designer
+                        </a>
                     </div>
 
                 </div>
 
                 <div className="row mb-5 text-center">
                     {
-                        categories.map(x => <div className="mt-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6 block">
+                        categories.map(x => <div className="mt-3 col-lg-3 col-md-3 col-sm-6 col-12 block">
                             <div className="content category-card">
                                 <center>
                                     <img src={`${urlImg}system/public/dist/img/categories/${x.image}`} className="cate-img" />
